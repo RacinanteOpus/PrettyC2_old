@@ -196,21 +196,21 @@ function doClick() {
      var key3 = challengesU2[k];
      var isAlt = (i+j+k)%2;
 
-     var row = body.insertRow(-1);
+     var row3 = body.insertRow(-1);
 
-     var cellChallenge = row.insertCell(0);
-     var cellHZE = row.insertCell(1);
-     var cellC2Percent = row.insertCell(2);
+     var cellChallenge3 = row.insertCell(0);
+     var cellHZE3 = row.insertCell(1);
+     var cellC2Percent3 = row.insertCell(2);
 
      if (game['c2'][key3] !== undefined)
      {
         var c2HZE = Math.min(game['c2'][key3], radHZReached);
-        cellChallenge.innerHTML = challengesU2[k];
-     	  cellChallenge.setAttribute("sorttable_customkey", "3 "+challengesU2[k]);
-        cellHZE.innerHTML = c2HZE;
-     	  cellHZE.style.textAlign = "right";
-	     cellC2Percent2.innerHTML = numberWithCommas(getBasicC2(game['c2'][key3], hasMesmer, challengesU2[k])) + "%";     	
-	     cellC2Percent.style.textAlign = "right";
+        cellChallenge3.innerHTML = challengesU2[k];
+     	  cellChallenge3.setAttribute("sorttable_customkey", "3 "+challengesU2[k]);
+        cellHZE3.innerHTML = c2HZE;
+     	  cellHZE3.style.textAlign = "right";
+	     cellC2Percent3.innerHTML = numberWithCommas(getBasicC2(game['c2'][key3], hasMesmer, challengesU2[k])) + "%";     	
+	     cellC2Percent3.style.textAlign = "right";
      }
     }
     var footer = table.createTFoot();
