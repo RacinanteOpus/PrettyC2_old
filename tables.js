@@ -193,7 +193,7 @@ function doClick() {
     }
 
     for (var k = 0; k < challengesU2.length; k++) {
-     var key = challengesU2[k];
+     var key3 = challengesU2[k];
      var isAlt = (i+j+k)%2;
 
      var row = body.insertRow(-1);
@@ -202,14 +202,14 @@ function doClick() {
      var cellHZE = row.insertCell(1);
      var cellC2Percent = row.insertCell(2);
 
-     if (game['c2'][key] !== undefined)
+     if (game['c2'][key3] !== undefined)
      {
-        var c2HZE = Math.min(game['c2'][key], radHZReached);
+        var c2HZE = Math.min(game['c2'][key3], radHZReached);
         cellChallenge.innerHTML = challengesU2[k];
      	  cellChallenge.setAttribute("sorttable_customkey", "3 "+challengesU2[k]);
         cellHZE.innerHTML = c2HZE;
      	  cellHZE.style.textAlign = "right";
-	     cellC2Percent2.innerHTML = numberWithCommas(getBasicC2(game['c2'][key2], hasMesmer, challengesU2[k])) + "%";     	
+	     cellC2Percent2.innerHTML = numberWithCommas(getBasicC2(game['c2'][key3], hasMesmer, challengesU2[k])) + "%";     	
 	     cellC2Percent.style.textAlign = "right";
      }
     }
