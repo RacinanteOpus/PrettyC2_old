@@ -63,6 +63,22 @@ function getBasicC2(HZE, isMesmer, challenge = "standard") {
       currentBonus = 10;
       break;
     }
+    case "Trappapalooza":
+    {
+      zonesForBonus = 10;
+      zonesForBonusIncrease = 50;
+      bonusIncrease = 2;
+      currentBonus = 3;
+      break;
+    }
+    default:
+    {
+      zonesForBonus = 10;
+      zonesForBonusIncrease = 100;
+      bonusIncrease = isMesmer?3:1;
+      currentBonus = isMesmer?3:1;
+      break;
+    }
   }
 
   for (i = 0; i < Math.floor(HZE/zonesForBonus); i++)
