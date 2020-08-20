@@ -230,8 +230,7 @@ function doClick() {
     cellC2PercentT.innerHTML = numberWithCommas(c2) + "%";
     cellC2PercentT.style.textAlign = "right";
     
-    
-    rowTotal = footer.insertRow(0);
+    rowTotal = footer.insertRow(1);
     cellTotal = rowTotal.insertCell(0);
     cellBlank = rowTotal.insertCell(1);
     cellC2PercentT = rowTotal.insertCell(2);
@@ -240,7 +239,7 @@ function doClick() {
     cellC2PercentT.innerHTML = numberWithCommas(c3) + "%";
     cellC2PercentT.style.textAlign = "right";
 	
-    rowTotal = footer.insertRow(0);
+    rowTotal = footer.insertRow(2);
     cellTotal = rowTotal.insertCell(0);
     cellBlank = rowTotal.insertCell(1);
     cellC2PercentT = rowTotal.insertCell(2);
