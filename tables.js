@@ -187,14 +187,14 @@ function doClick() {
      cellHZE2.innerHTML = c2HZE;
      cellHZE2.style.textAlign = "right";
      var c2HZE = Math.min(game['c2'][key2], getC2HZE());
-     cellC2Percent2.innerHTML = numberWithCommas(getBasicC2(game['c2'][key2], hasMesmer, specialC2s[j])) + "%";
+     cellC2Percent2.innerHTML = numberWithCommas(getBasicC2(game['c2'][key2], hasMesmer,key2)) + "%";
      cellC2Percent2.style.textAlign = "right";
      }
     }
 
     for (var k = 0; k < challengesU2.length; k++) {
      var key3 = challengesU2[k];
-     var isAlt = (i+j+k)%2;
+     var isAlt3 = (i+j+k)%2;
 
      var row3 = body.insertRow(-1);
 
@@ -209,7 +209,7 @@ function doClick() {
      	  cellChallenge3.setAttribute("sorttable_customkey", "3 "+challengesU2[k]);
         cellHZE3.innerHTML = c2HZE;
      	  cellHZE3.style.textAlign = "right";
-	     cellC2Percent3.innerHTML = numberWithCommas(getBasicC2(game['c2'][key3], hasMesmer, challengesU2[k])) + "%";     	
+	     cellC2Percent3.innerHTML = numberWithCommas(getBasicC2(game['c2'][key3], hasMesmer, key3)) + "%";     	
 	     cellC2Percent3.style.textAlign = "right";
      }
     }
