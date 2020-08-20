@@ -231,19 +231,19 @@ function doClick() {
     cellC2PercentT.style.textAlign = "right";
     
     
-    var rowTotal = footer.insertRow(0);
-    var cellTotal = rowTotal.insertCell(0);
-    var cellBlank = rowTotal.insertCell(1);
-    var cellC2PercentT = rowTotal.insertCell(2);
+    rowTotal = footer.insertRow(0);
+    cellTotal = rowTotal.insertCell(0);
+    cellBlank = rowTotal.insertCell(1);
+    cellC2PercentT = rowTotal.insertCell(2);
 
     cellTotal.innerHTML = "Total C<sup>3</sup>";
     cellC2PercentT.innerHTML = numberWithCommas(c3) + "%";
     cellC2PercentT.style.textAlign = "right";
 	
-    var rowTotal = footer.insertRow(0);
-    var cellTotal = rowTotal.insertCell(0);
-    var cellBlank = rowTotal.insertCell(1);
-    var cellC2PercentT = rowTotal.insertCell(2);
+    rowTotal = footer.insertRow(0);
+    cellTotal = rowTotal.insertCell(0);
+    cellBlank = rowTotal.insertCell(1);
+    cellC2PercentT = rowTotal.insertCell(2);
 
     cellTotal.innerHTML = "Total:";
     cellC2PercentT.innerHTML = numberWithCommas(totalC2) + "%";
