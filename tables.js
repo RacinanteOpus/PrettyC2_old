@@ -119,6 +119,7 @@ function doClick() {
 
     var easyC2 = ["Discipline", "Metal", "Size", "Balance", "Meditate"];
     var specialC2s = ["Trimp"];
+    var challengesU2 = ["Unlucky", "Downsize", "Transmute", "Unbalance", "Duel"];
 
 	var game = JSON.parse(LZString.decompressFromBase64(foo.value));
     foo.value = "";
@@ -139,6 +140,12 @@ function doClick() {
     if(HZReached >= 180) { easyC2.push("Watch"); easyC2.push("Lead"); }
     if(HZReached >= 425) specialC2s.push("Obliterated");
     if(totalC2 >= 4500) specialC2s.push("Eradicated");
+	
+    if(radHZReached >= 59) challengesU2.push("Trappapalooza");
+    if(radHZReached >= 69) challengesU2.push("Wither");
+    if(radHZReached >= 84) challengesU2.push("Quest");
+    if(radHZReached >= 105) challengesU2.push("Storm");
+    if(radHZReached >= 115) challengesU2.push("Berserk");
 
     for (var i = 0; i < easyC2.length; i++) {
      var key = easyC2[i];
@@ -184,6 +191,28 @@ function doClick() {
      }
     }
 
+    for (var i = 0; i < challengesU2.length; i++) {
+     var key = challengesU2[i];
+     var isAlt = i%2;
+
+     var row = body.insertRow(-1);
+
+     var cellChallenge = row.insertCell(0);
+     var cellHZE = row.insertCell(1);
+     var cellC2Percent = row.insertCell(2);
+
+     if (game['c2'][key] !== undefined)
+     {
+        var c2HZE = Math.min(game['c2'][key], getC2HZE(radHZReached));
+        cellChallenge.innerHTML = challengesU2[i];
+     	cellChallenge.setAttribute("sorttable_customkey", "1 "+challengesU2[i]);
+        cellHZE.innerHTML = c2HZE;
+     	cellHZE.style.textAlign = "right";
+        cellC2Percent.innerHTML = numberWithCommas(getBasicC2(c2HZE, hasMesmer)) + "%";
+     	cellC2Percent.style.textAlign = "right";
+     }
+
+    }
 	var footer = table.createTFoot();
     var rowTotal = footer.insertRow(0);
     var cellTotal = rowTotal.insertCell(0);
