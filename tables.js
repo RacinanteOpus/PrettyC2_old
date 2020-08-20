@@ -191,8 +191,8 @@ function doClick() {
      }
     }
 
-    for (var i = 0; i < challengesU2.length; i++) {
-     var key = challengesU2[i];
+    for (var k = 0; k < challengesU2.length; k++) {
+     var key = challengesU2[k];
      var isAlt = i%2;
 
      var row = body.insertRow(-1);
@@ -204,16 +204,16 @@ function doClick() {
      if (game['c2'][key] !== undefined)
      {
         var c2HZE = Math.min(game['c2'][key], getC2HZE(radHZReached));
-        cellChallenge.innerHTML = challengesU2[i];
-     	cellChallenge.setAttribute("sorttable_customkey", "1 "+challengesU2[i]);
+        cellChallenge.innerHTML = challengesU2[k];
+     	cellChallenge.setAttribute("sorttable_customkey", "3 "+challengesU2[k]);
         cellHZE.innerHTML = c2HZE;
      	cellHZE.style.textAlign = "right";
-        cellC2Percent.innerHTML = numberWithCommas(getBasicC2(c2HZE, hasMesmer)) + "%";
-     	cellC2Percent.style.textAlign = "right";
+	cellC2Percent2.innerHTML = numberWithCommas(getBasicC2(game['c2'][key2], hasMesmer, challengesU2[k])) + "%";     	
+	cellC2Percent.style.textAlign = "right";
      }
 
     }
-	var footer = table.createTFoot();
+    var footer = table.createTFoot();
     var rowTotal = footer.insertRow(0);
     var cellTotal = rowTotal.insertCell(0);
     var cellBlank = rowTotal.insertCell(1);
