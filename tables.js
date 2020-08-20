@@ -117,12 +117,15 @@ function doClick() {
     var table = document.getElementById("c2table");
     var body = table.getElementsByTagName("tbody")[0];
     body.innerHTML = "";
+	
+    var c2 = 0;
+    var c3 = 0;
 
     var easyC2 = ["Discipline", "Metal", "Size", "Balance", "Meditate"];
     var specialC2s = ["Trimp"];
     var challengesU2 = ["Unlucky", "Downsize", "Transmute", "Unbalance", "Duel"];
 
-	 var game = JSON.parse(LZString.decompressFromBase64(foo.value));
+    var game = JSON.parse(LZString.decompressFromBase64(foo.value));
     foo.value = "";
 
     var hasMesmer = game.talents.mesmer.purchased;
@@ -165,8 +168,9 @@ function doClick() {
         cellChallenge.setAttribute("sorttable_customkey", "1 "+easyC2[i]);
         cellHZE.innerHTML = c2HZE;
         cellHZE.style.textAlign = "right";
+	c2 += getBasicC2(c2HZE, hasMesmer);
         cellC2Percent.innerHTML = numberWithCommas(getBasicC2(c2HZE, hasMesmer)) + "%";
-     	  cellC2Percent.style.textAlign = "right";
+     	cellC2Percent.style.textAlign = "right";
      }
 
     }
@@ -187,6 +191,7 @@ function doClick() {
      cellHZE2.innerHTML = c2HZE;
      cellHZE2.style.textAlign = "right";
      var c2HZE = Math.min(game['c2'][key2], getC2HZE());
+     c2 += getBasicC2(game['c2'][key2], hasMesmer,key2);
      cellC2Percent2.innerHTML = numberWithCommas(getBasicC2(game['c2'][key2], hasMesmer,key2)) + "%";
      cellC2Percent2.style.textAlign = "right";
      }
@@ -206,15 +211,35 @@ function doClick() {
      {
         var c2HZE = Math.min(game['c2'][key3], radHZReached);
         cellChallenge3.innerHTML = key3;
-     	  cellChallenge3.setAttribute("sorttable_customkey", "3 "+key3);
+     	cellChallenge3.setAttribute("sorttable_customkey", "3 "+key3);
         cellHZE3.innerHTML = c2HZE;
-     	  cellHZE3.style.textAlign = "right";
+     	cellHZE3.style.textAlign = "right";
         var c2HZE = Math.min(game['c2'][key2], getC2HZE());
-	     cellC2Percent3.innerHTML = numberWithCommas(getBasicC2(game['c2'][key3], hasMesmer, key3)) + "%";     	
-	     cellC2Percent3.style.textAlign = "right";
+        c3 += getBasicC2(game['c2'][key3], hasMesmer,key3);
+	cellC2Percent3.innerHTML = numberWithCommas(getBasicC2(game['c2'][key3], hasMesmer, key3)) + "%";     	
+	cellC2Percent3.style.textAlign = "right";
      }
     }
     var footer = table.createTFoot();
+    var rowTotal = footer.insertRow(0);
+    var cellTotal = rowTotal.insertCell(0);
+    var cellBlank = rowTotal.insertCell(1);
+    var cellC2PercentT = rowTotal.insertCell(2);
+
+    cellTotal.innerHTML = "Total C<sup>2</sup>";
+    cellC2PercentT.innerHTML = numberWithCommas(c2) + "%";
+    cellC2PercentT.style.textAlign = "right";
+    
+    
+    var rowTotal = footer.insertRow(0);
+    var cellTotal = rowTotal.insertCell(0);
+    var cellBlank = rowTotal.insertCell(1);
+    var cellC2PercentT = rowTotal.insertCell(2);
+
+    cellTotal.innerHTML = "Total C<sup>3</sup>";
+    cellC2PercentT.innerHTML = numberWithCommas(c3) + "%";
+    cellC2PercentT.style.textAlign = "right";
+	
     var rowTotal = footer.insertRow(0);
     var cellTotal = rowTotal.insertCell(0);
     var cellBlank = rowTotal.insertCell(1);
