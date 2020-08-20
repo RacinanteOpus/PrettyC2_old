@@ -198,9 +198,9 @@ function doClick() {
 
      var row3 = body.insertRow(-1);
 
-     var cellChallenge3 = row.insertCell(0);
-     var cellHZE3 = row.insertCell(1);
-     var cellC2Percent3 = row.insertCell(2);
+     var cellChallenge3 = row3.insertCell(0);
+     var cellHZE3 = row3.insertCell(1);
+     var cellC2Percent3 = row3.insertCell(2);
 
      if (game['c2'][key3] !== undefined)
      {
