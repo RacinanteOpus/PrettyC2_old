@@ -115,8 +115,10 @@ function doClick() {
 
     var result = document.getElementById("result");
     var table = document.getElementById("c2table");
-    var body = table.getElementsByTagName("tbody")[0];
-    table.innerHTML = "";
+    var body = table.getElementsByTagName("tbody")[0];");
+    var foot = table.getElementsByTagName("tfoot")[0];
+    body.innerHTML = "";
+    foot.innerHTML = "";
     // not sure why this is not saving at the moment
 	
     var c2 = 0;
