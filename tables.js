@@ -221,28 +221,28 @@ function doClick() {
      }
     }
     var footer = table.createTFoot();
+    var c2rowTotal = footer.insertRow(0);
+    var c2cellTotal = c2rowTotal.insertCell(0);
+    var c2cellBlank = c2rowTotal.insertCell(1);
+    var c2cellC2PercentT = c2rowTotal.insertCell(2);
+
+    c2cellTotal.innerHTML = "Total C<sup>2</sup>";
+    c2cellC2PercentT.innerHTML = numberWithCommas(c2) + "%";
+    c2cellC2PercentT.style.textAlign = "right";
+    
+    var c3rowTotal = footer.insertRow(0);
+    var c3cellTotal = c3rowTotal.insertCell(0);
+    var c3cellBlank = c3rowTotal.insertCell(1);
+    var c3cellC2PercentT = c3rowTotal.insertCell(2);
+
+    c3cellTotal.innerHTML = "Total C<sup>3</sup>";
+    c3cellC2PercentT.innerHTML = numberWithCommas(c3) + "%";
+    c3cellC2PercentT.style.textAlign = "right";
+	
     var rowTotal = footer.insertRow(0);
     var cellTotal = rowTotal.insertCell(0);
     var cellBlank = rowTotal.insertCell(1);
     var cellC2PercentT = rowTotal.insertCell(2);
-
-    cellTotal.innerHTML = "Total C<sup>2</sup>";
-    cellC2PercentT.innerHTML = numberWithCommas(c2) + "%";
-    cellC2PercentT.style.textAlign = "right";
-    
-    rowTotal = footer.insertRow(1);
-    cellTotal = rowTotal.insertCell(0);
-    cellBlank = rowTotal.insertCell(1);
-    cellC2PercentT = rowTotal.insertCell(2);
-
-    cellTotal.innerHTML = "Total C<sup>3</sup>";
-    cellC2PercentT.innerHTML = numberWithCommas(c3) + "%";
-    cellC2PercentT.style.textAlign = "right";
-	
-    rowTotal = footer.insertRow(2);
-    cellTotal = rowTotal.insertCell(0);
-    cellBlank = rowTotal.insertCell(1);
-    cellC2PercentT = rowTotal.insertCell(2);
 
     cellTotal.innerHTML = "Total:";
     cellC2PercentT.innerHTML = numberWithCommas(totalC2) + "%";
