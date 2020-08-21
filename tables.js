@@ -133,7 +133,7 @@ function doClick() {
 
     var hasMesmer = game.talents.mesmer.purchased;
     var HZReached = game.global.highestLevelCleared+1;
-    var radHZReached = game.global.highestRadonLevelCleared;
+    var radHZReached = game.global.highestRadonLevelCleared+1;
     var prisonClear = game.global.prisonClear;
     var totalC2 = game.global.totalSquaredReward;
 
