@@ -117,6 +117,7 @@ function doClick() {
     var table = document.getElementById("c2table");
     var body = table.getElementsByTagName("tbody")[0];
     table.innerHTML = "";
+	// not sure why this is not saving at the moment
 	
     var c2 = 0;
     var c3 = 0;
