@@ -233,7 +233,7 @@ function doClick() {
     c2cellC2PercentT.innerHTML = numberWithCommas(c2) + "%";
     c2cellC2PercentT.style.textAlign = "right";
     
-    var c3rowTotal = footer.insertRow(0);
+    var c3rowTotal = footer.insertRow(-1);
     var c3cellTotal = c3rowTotal.insertCell(0);
     var c3cellBlank = c3rowTotal.insertCell(1);
     var c3cellC2PercentT = c3rowTotal.insertCell(2);
@@ -242,7 +242,7 @@ function doClick() {
     c3cellC2PercentT.innerHTML = numberWithCommas(c3) + "%";
     c3cellC2PercentT.style.textAlign = "right";
 	
-    var rowTotal = footer.insertRow(0);
+    var rowTotal = footer.insertRow(-1);
     var cellTotal = rowTotal.insertCell(0);
     var cellBlank = rowTotal.insertCell(1);
     var cellC2PercentT = rowTotal.insertCell(2);
