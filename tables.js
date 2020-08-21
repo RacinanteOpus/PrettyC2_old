@@ -116,7 +116,9 @@ function doClick() {
     var result = document.getElementById("result");
     var table = document.getElementById("c2table");
     var body = table.getElementsByTagName("tbody")[0];
+    var foot = table.getElementsByTagName("tfooter")[0];
     body.innerHTML = "";
+    foot.innerHTML = "";
 	
     var c2 = 0;
     var c3 = 0;
