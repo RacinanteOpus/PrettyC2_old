@@ -115,12 +115,22 @@ function doClick() {
 
     var result = document.getElementById("result");
     var table = document.getElementById("c2table");
+    var table2 = document.getElementById("c2table2");
+    var table3 = document.getElementById("c3table");
     var body = table.getElementsByTagName("tbody")[0];
     var foot = table.getElementsByTagName("tfoot")[0];
     body.innerHTML = "";
     foot.innerHTML = "";
-    // not sure why this is not saving at the moment
+    var body2 = table2.getElementsByTagName("tbody")[0];
+    var foot2 = table2.getElementsByTagName("tfoot")[0];
+    body2.innerHTML = "";
+    foot2.innerHTML = "";
+    var body3 = table3.getElementsByTagName("tbody")[0];
+    var foot3 = table3.getElementsByTagName("tfoot")[0];
+    body3.innerHTML = "";
+    foot3.innerHTML = "";
 	
+    var c1 = 0;	
     var c2 = 0;
     var c3 = 0;
 
@@ -171,7 +181,7 @@ function doClick() {
         cellChallenge.setAttribute("sorttable_customkey", "1 "+easyC2[i]);
         cellHZE.innerHTML = c2HZE;
         cellHZE.style.textAlign = "right";
-	c2 += getBasicC2(c2HZE, hasMesmer);
+	c1 += getBasicC2(c2HZE, hasMesmer);
         cellC2Percent.innerHTML = numberWithCommas(getBasicC2(c2HZE, hasMesmer)) + "%";
      	cellC2Percent.style.textAlign = "right";
      }
@@ -181,7 +191,7 @@ function doClick() {
      var key2 = specialC2s[j];
      var isAlt2 = (i+j)%2;
 
-     var row2 = body.insertRow(-1);
+     var row2 = body2.insertRow(-1);
      var cellChallenge2 = row2.insertCell(0);
      var cellHZE2 = row2.insertCell(1);
      var cellC2Percent2 = row2.insertCell(2);
@@ -204,7 +214,7 @@ function doClick() {
      var key3 = challengesU2[k];
      var isAlt3 = (i+j+k)%2;
 
-     var row3 = body.insertRow(-1);
+     var row3 = body3.insertRow(-1);
 
      var cellChallenge3 = row3.insertCell(0);
      var cellHZE3 = row3.insertCell(1);
@@ -224,16 +234,27 @@ function doClick() {
      }
     }
     var footer = table.createTFoot();
-    var c2rowTotal = footer.insertRow(0);
+    var footer2 = table2.createTFoot();
+    var footer3 = table3.createTFoot();
+    var c1rowTotal = footer.insertRow(0);
+    var c1cellTotal = c1rowTotal.insertCell(0);
+    var c1cellBlank = c1rowTotal.insertCell(1);
+    var c1cellC2PercentT = c1rowTotal.insertCell(2);
+
+    c1cellTotal.innerHTML = "Total Basic C<sup>2</sup>";
+    c1cellC2PercentT.innerHTML = numberWithCommas(c1) + "%";
+    c1cellC2PercentT.style.textAlign = "right";
+
+    var c2rowTotal = footer2.insertRow(0);
     var c2cellTotal = c2rowTotal.insertCell(0);
     var c2cellBlank = c2rowTotal.insertCell(1);
     var c2cellC2PercentT = c2rowTotal.insertCell(2);
 
-    c2cellTotal.innerHTML = "Total C<sup>2</sup>";
+    c2cellTotal.innerHTML = "Total Special C<sup>2</sup>";
     c2cellC2PercentT.innerHTML = numberWithCommas(c2) + "%";
     c2cellC2PercentT.style.textAlign = "right";
-    
-    var c3rowTotal = footer.insertRow(-1);
+	
+    var c3rowTotal = footer3.insertRow(-1);
     var c3cellTotal = c3rowTotal.insertCell(0);
     var c3cellBlank = c3rowTotal.insertCell(1);
     var c3cellC2PercentT = c3rowTotal.insertCell(2);
@@ -242,7 +263,7 @@ function doClick() {
     c3cellC2PercentT.innerHTML = numberWithCommas(c3) + "%";
     c3cellC2PercentT.style.textAlign = "right";
 	
-    var rowTotal = footer.insertRow(-1);
+    var rowTotal = footer3.insertRow(-1);
     var cellTotal = rowTotal.insertCell(0);
     var cellBlank = rowTotal.insertCell(1);
     var cellC2PercentT = rowTotal.insertCell(2);

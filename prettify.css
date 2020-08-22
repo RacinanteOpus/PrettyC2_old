@@ -10,12 +10,15 @@ table.sortable tbody tr:nth-child(2n) td {
 table.sortable tbody tr:nth-child(2n+1) td {
   background: #161a28;
 }
+table tbody tr td {
+   vertical-align: top;
+}
 body
 {
     background-color: #17252A;
     position: absolute;
     top: 10%;
-    left: 25%;
+    left: 5%;
 }
 
 .datagrid table 
