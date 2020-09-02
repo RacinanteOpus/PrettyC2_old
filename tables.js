@@ -1,6 +1,6 @@
 
-function numberWithCommas(x) {
-    return x.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+function numberWithCommas(x,y) {
+    return x.toFixed(y).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 function getBasicC2(HZE, isMesmer, challenge = "standard") {
@@ -182,7 +182,7 @@ function doClick() {
         cellHZE.innerHTML = c2HZE;
         cellHZE.style.textAlign = "right";
 	c1 += getBasicC2(c2HZE, hasMesmer);
-        cellC2Percent.innerHTML = numberWithCommas(getBasicC2(c2HZE, hasMesmer)) + "%";
+        cellC2Percent.innerHTML = numberWithCommas(getBasicC2(c2HZE, hasMesmer),0) + "%";
      	cellC2Percent.style.textAlign = "right";
      }
 
@@ -205,7 +205,7 @@ function doClick() {
      cellHZE2.style.textAlign = "right";
      var c2HZE = Math.min(game['c2'][key2], getC2HZE());
      c2 += getBasicC2(game['c2'][key2], hasMesmer,key2);
-     cellC2Percent2.innerHTML = numberWithCommas(getBasicC2(game['c2'][key2], hasMesmer,key2)) + "%";
+     cellC2Percent2.innerHTML = numberWithCommas(getBasicC2(game['c2'][key2], hasMesmer,key2),0) + "%";
      cellC2Percent2.style.textAlign = "right";
      }
     }
@@ -229,7 +229,7 @@ function doClick() {
      	cellHZE3.style.textAlign = "right";
         var c2HZE = Math.min(game['c2'][key2], getC2HZE());
         c3 += getBasicC2(game['c2'][key3], hasMesmer,key3);
-	cellC2Percent3.innerHTML = numberWithCommas(getBasicC2(game['c2'][key3], hasMesmer, key3)) + "%";     	
+	cellC2Percent3.innerHTML = numberWithCommas(getBasicC2(game['c2'][key3], hasMesmer, key3),0) + "%";     	
 	cellC2Percent3.style.textAlign = "right";
      }
     }
@@ -242,7 +242,7 @@ function doClick() {
     var c1cellC2PercentT = c1rowTotal.insertCell(2);
 
     c1cellTotal.innerHTML = "Total Basic C<sup>2</sup>";
-    c1cellC2PercentT.innerHTML = numberWithCommas(c1) + "%";
+    c1cellC2PercentT.innerHTML = numberWithCommas(c1,0) + "%";
     c1cellC2PercentT.style.textAlign = "right";
 
     var c2rowTotal = footer2.insertRow(0);
@@ -251,7 +251,7 @@ function doClick() {
     var c2cellC2PercentT = c2rowTotal.insertCell(2);
 
     c2cellTotal.innerHTML = "Total Special C<sup>2</sup>";
-    c2cellC2PercentT.innerHTML = numberWithCommas(c2) + "%";
+    c2cellC2PercentT.innerHTML = numberWithCommas(c2,0) + "%";
     c2cellC2PercentT.style.textAlign = "right";
 	
     var c3rowTotal = footer3.insertRow(-1);
@@ -260,7 +260,7 @@ function doClick() {
     var c3cellC2PercentT = c3rowTotal.insertCell(2);
 
     c3cellTotal.innerHTML = "Total C<sup>3</sup>";
-    c3cellC2PercentT.innerHTML = numberWithCommas(c3) + "%";
+    c3cellC2PercentT.innerHTML = numberWithCommas(c3,0) + "%";
     c3cellC2PercentT.style.textAlign = "right";
 	
     var rowTotal = footer3.insertRow(-1);
@@ -269,6 +269,6 @@ function doClick() {
     var cellC2PercentT = rowTotal.insertCell(2);
 
     cellTotal.innerHTML = "Total:";
-    cellC2PercentT.innerHTML = numberWithCommas(totalC2) + "%";
+    cellC2PercentT.innerHTML = numberWithCommas(totalC2,2) + "%";
     cellC2PercentT.style.textAlign = "right";
 };
