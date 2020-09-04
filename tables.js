@@ -258,6 +258,24 @@ function doClick() {
     var c3cellTotal = c3rowTotal.insertCell(0);
     var c3cellBlank = c3rowTotal.insertCell(1);
     var c3cellC2PercentT = c3rowTotal.insertCell(2);
+	
+    var c2rowTotalb = footer2.insertRow(0);
+    var c2cellTotalb = c2rowTotal.insertCell(0);
+    var c2cellBlankb = c2rowTotal.insertCell(1);
+    var c2cellC2PercentTb = c2rowTotal.insertCell(2);
+
+    c2cellTotalb.innerHTML = " ";
+    c2cellC2PercentTb.innerHTML = " ";
+    c2cellC2PercentTb.style.textAlign = "right";
+	
+    var c2rowTotalT = footer2.insertRow(0);
+    var c2cellTotalT = c2rowTotal.insertCell(0);
+    var c2cellBlankT = c2rowTotal.insertCell(1);
+    var c2cellC2PercentTT = c2rowTotal.insertCell(2);
+
+    c2cellTotalT.innerHTML = "Total C<sup>2</sup>";
+    c2cellC2PercentTT.innerHTML = numberWithCommas(c2+c1,0) + "%";
+    c2cellC2PercentTT.style.textAlign = "right";
 
     c3cellTotal.innerHTML = "Total C<sup>3</sup>";
     c3cellC2PercentT.innerHTML = numberWithCommas(c3,0) + "%";
