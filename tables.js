@@ -86,7 +86,7 @@ function updateWhatIf() {
 	}
 	document.getElementById("TotalCC").innerHTML = numberWithCommas(newtotal2,0) + '%';
 	document.getElementById("TotalCC").title = newtotal2;
-	var allc2 = min(60000,newtotal+newtotal2);
+	var allc2 = Math.min(60000,newtotal+newtotal2);
 	document.getElementById("TotalCa").innerHTML = numberWithCommas(allc2,0) + '%';
 	document.getElementById("TotalCa").title = allc2;
 
@@ -472,9 +472,9 @@ function doClick() {
 
     c2cellTotalT.innerHTML = "Total C<sup>2</sup>";
     c2cellTotalT.style.whiteSpace="nowrap";
-    c2cellC2PercentTT.innerHTML = numberWithCommas(min(c2+c1,60000),0) + "%" + maxC2;
+    c2cellC2PercentTT.innerHTML = numberWithCommas(Math.min(c2+c1,60000),0) + "%" + maxC2;
     c2cellC2PercentTT.style.textAlign = "right";
-    c2cellWIPctT.innerHTML = numberWithCommas(min(c2+c1,60000),0) + "%" + maxC2;
+    c2cellWIPctT.innerHTML = numberWithCommas(Math.min(c2+c1,60000),0) + "%" + maxC2;
     c2cellWIPctT.style.textAlign = "right";
     c2cellWIPctT.setAttribute("id","TotalCa");
     c2cellWIPctT.title = c2+c1;
