@@ -86,7 +86,7 @@ function updateWhatIf() {
 	}
 	document.getElementById("TotalCC").innerHTML = numberWithCommas(newtotal2,0) + '%';
 	document.getElementById("TotalCC").title = newtotal2;
-	var allc2 = newtotal+newtotal2;
+	var allc2 = min(60000,newtotal+newtotal2);
 	document.getElementById("TotalCa").innerHTML = numberWithCommas(allc2,0) + '%';
 	document.getElementById("TotalCa").title = allc2;
 
@@ -425,6 +425,11 @@ function doClick() {
 
     c2cellTotal.innerHTML = "Total Special C<sup>2</sup>";
     c2cellTotal.style.whiteSpace="nowrap";
+    var maxC2 = "";
+    if (c2>60000)
+    {
+	    maxC2=" (capped)";
+    }
     c2cellC2PercentT.innerHTML = numberWithCommas(c2,0) + "%";
     c2cellC2PercentT.style.textAlign = "right";
     c2cellWIPct.innerHTML = numberWithCommas(c2,0) + "%";
@@ -467,9 +472,9 @@ function doClick() {
 
     c2cellTotalT.innerHTML = "Total C<sup>2</sup>";
     c2cellTotalT.style.whiteSpace="nowrap";
-    c2cellC2PercentTT.innerHTML = numberWithCommas(c2+c1,0) + "%";
+    c2cellC2PercentTT.innerHTML = numberWithCommas(min(c2+c1,60000),0) + "%" + maxC2;
     c2cellC2PercentTT.style.textAlign = "right";
-    c2cellWIPctT.innerHTML = numberWithCommas(c2+c1,0) + "%";
+    c2cellWIPctT.innerHTML = numberWithCommas(min(c2+c1,60000),0) + "%" + maxC2;
     c2cellWIPctT.style.textAlign = "right";
     c2cellWIPctT.setAttribute("id","TotalCa");
     c2cellWIPctT.title = c2+c1;
