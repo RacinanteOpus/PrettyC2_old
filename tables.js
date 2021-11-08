@@ -467,14 +467,15 @@ function doClick() {
     var c2cellC2PercentTT = c2rowTotalT.insertCell(2);
     var c2cellWIHZET = c2rowTotalT.insertCell(3);
     var c2cellWIPctT = c2rowTotalT.insertCell(4);
+    var c2Check = Math.min(c2+c1,60000);
      c2cellWIHZET.setAttribute("class","hideme");
      c2cellWIPctT.setAttribute("class","hideme");
 
     c2cellTotalT.innerHTML = "Total C<sup>2</sup>";
     c2cellTotalT.style.whiteSpace="nowrap";
-    c2cellC2PercentTT.innerHTML = numberWithCommas(Math.min(c2+c1,60000),0) + "%" + maxC2;
+    c2cellC2PercentTT.innerHTML = numberWithCommas(c2Check,0) + "%" + maxC2;
     c2cellC2PercentTT.style.textAlign = "right";
-    c2cellWIPctT.innerHTML = numberWithCommas(Math.min(c2+c1,60000),0) + "%" + maxC2;
+    c2cellWIPctT.innerHTML = numberWithCommas(c2Check,0) + "%" + maxC2;
     c2cellWIPctT.style.textAlign = "right";
     c2cellWIPctT.setAttribute("id","TotalCa");
     c2cellWIPctT.title = c2+c1;
