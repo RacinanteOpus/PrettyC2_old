@@ -163,6 +163,7 @@ function doClick() {
     if(radHZReached >= 84) challengesU2.push("Quest");
     if(radHZReached >= 105) challengesU2.push("Storm");
     if(radHZReached >= 115) challengesU2.push("Berserk");
+    if(radHZReached >= 115) challengesU2.push("Glass");
 
     for (var i = 0; i < easyC2.length; i++) {
      var key = easyC2[i];
