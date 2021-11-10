@@ -22,7 +22,55 @@ function myToggle() {
 function displayThis(thisID) {
   document.getElementById(thisID).style.display = "block";
 }
-
+// functions for displaying information in save in preferred format
+	    
+	    const notations = [
+	    	[],
+	    	'KMBTQaQiSxSpOcNoDcUdDdTdQadQidSxdSpdOdNdVUvDvTvQavQivSxvSpvOvNvTt'.split(/(?=[A-Z])/),
+	    	[],
+	    	("a b c d e f g h i j k l m n o p q r s t u v w x y z" +
+	    	" aa ab ac ad ae af ag ah ai aj ak al am an ao ap aq ar as at au av aw ax ay az" +
+	    	" ba bb bc bd be bf bg bh bi bj bk bl bm bn bo bp bq br bs bt bu bv bw bx by bz" +
+	    	" ca cb cc cd ce cf cg ch ci cj ck cl cm cn co cp cq cr cs ct cu cv cw cx").split(' ')
+	    ];
+	    
+	    function prettify(number) {
+	    	if (number < 0)
+	    		return '-' + prettify(-number);
+	    
+	    	if (number < 10000)
+	    		return +number.toPrecision(4) + '';
+	    
+	    	if (localStorage.notation === '0') // scientific
+	    		return number.toExponential(2).replace('+', '');
+	    
+	    	let unit = 0;
+	    	while (number >= 999.5) {
+	    		number /= 1000;
+	    		++unit;
+	    	}
+	    
+	    	let suffixes = notations[localStorage.notation || 1];
+	    	let suffix = unit > suffixes.length ? `e${3 * unit}` : suffixes[unit - 1];
+	    	return +number.toPrecision(3) + suffix;
+	    }
+	    
+	    function parse_suffixes(str) {
+	    	str = str.replace(/\*.*|[^--9+a-z]/gi, '');
+	    
+	    	let suffixes = notations[localStorage.notation === '3' ? 3 : 1];
+	    	for (let i = suffixes.length; i > 0; --i)
+	    		str = str.replace(new RegExp(suffixes[i - 1] + '$', 'i'), `E${3 * i}`);
+	    
+	    	return +str;
+	    }
+	    
+	    function check_input(field) {
+	    	let ok = isFinite(parse_suffixes(field.value));
+	    	let notation = localStorage.notation === '3' ? 'alphabetic ' : '';
+	    	field.setCustomValidity(ok ? '' : `Invalid ${notation}number: ${field.value}`);
+}
+// End preferred format functions
 function getSave() {
     var foo = document.getElementById("foo");
     foo.value = localStorage.getItem("trimpSave");
@@ -250,14 +298,22 @@ function doClick() {
     var radHZReached = game.global.highestRadonLevelCleared+1;
     var prisonClear = game.global.prisonClear;
     var totalC2 = game.global.totalSquaredReward;
+
+// Information from save for the notes area
     var mayhem = game.global.mayhemCompletions;
     var pande = game.global.pandCompletions;
-    
+    var skele = new Date(game.global.lastSkeletimp);
+    var bone = new Date(game.global.lastBonePresimpt);
+    var void = game.global.totalVoidMaps;
+    var radon = prettify(game.global.totalRadonEarned);
+    var helium = prettify(game.global.totalHeliumEarned);
+   
     var may = document.getElementById("mayhem");
     var pand = document.getElementById("pande");
     may.innerHTML = mayhem;
     pand.innerHTML = pande;
 	
+//End notes section
     if(HZReached >= 70) specialC2s.push("Trapper");
     if(prisonClear >= 1) easyC2.push("Electricity");
     if(HZReached >= 120) specialC2s.push("Coordinate");
