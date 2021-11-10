@@ -259,7 +259,12 @@ function doClick() {
     var totalC2 = game.global.totalSquaredReward;
     var mayhem = game.global.mayhemCompletions;
     var pande = game.global.pandCompletions;
-
+    
+    var may = document.getElementById("mayhem");
+    var pand = document.getElementById("pande");
+    may.innerHTML = mayhem;
+    pand.innerHTML = pande;
+	
     if(HZReached >= 70) specialC2s.push("Trapper");
     if(prisonClear >= 1) easyC2.push("Electricity");
     if(HZReached >= 120) specialC2s.push("Coordinate");
