@@ -309,11 +309,11 @@ function doClick() {
     var helium = prettify(game.global.totalHeliumEarned);
     var myStr =  "<div class='frow'>Mayhem completions: "+mayhem+"<br>";
 	myStr += "Pandemonium completions: "+pande+"<br>";
+	myStr += "Helium: "+helium+"<br>";
+	myStr += "Radon: "+radon+"</div>";
 	myStr += "Void Maps: "+vm+"<br>";
 	myStr += "Last Skeletimp: "+skele+"<br>"	;	
 	myStr += "Last Presimp: "+bone+"<br>"	;
-	myStr += "Helium: "+helium+"<br>";
-	myStr += "Radon: "+radon+"</div>";
 
     var saveNotes = document.getElementById("saveNotes");
     saveNotes.innerHTML = myStr;	
