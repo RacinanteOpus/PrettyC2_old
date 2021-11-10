@@ -257,6 +257,8 @@ function doClick() {
     var radHZReached = game.global.highestRadonLevelCleared+1;
     var prisonClear = game.global.prisonClear;
     var totalC2 = game.global.totalSquaredReward;
+    var mayhem = game.global.mayhemCompletions;
+    var pande = game.global.pandCompletions;
 
     if(HZReached >= 70) specialC2s.push("Trapper");
     if(prisonClear >= 1) easyC2.push("Electricity");
