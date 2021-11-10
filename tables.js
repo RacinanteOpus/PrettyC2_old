@@ -1,4 +1,5 @@
 var game="";
+var notation=1;
 function numberWithCommas(x,y) {
     return x.toFixed(y).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -23,7 +24,6 @@ function displayThis(thisID) {
   document.getElementById(thisID).style.display = "block";
 }
 // functions for displaying information in save in preferred format
-	    var notation = game.options.menu.standardNotation.enabled;
 	    const notations = [
 	    	[],
 	    	'KMBTQaQiSxSpOcNoDcUdDdTdQadQidSxdSpdOdNdVUvDvTvQavQivSxvSpvOvNvTt'.split(/(?=[A-Z])/),
@@ -277,6 +277,7 @@ function doClick() {
 
     game = JSON.parse(LZString.decompressFromBase64(foo.value));
     foo.value = "";
+    notation = game.options.menu.standardNotation.enabled;
 
     var hasMesmer = game.talents.mesmer.purchased;
     var HZReached = game.global.highestLevelCleared+1;
