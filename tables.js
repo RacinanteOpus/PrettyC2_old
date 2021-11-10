@@ -19,16 +19,9 @@ function myToggle() {
   }
 }
 
-//function myTogglex() {
-//  var x = document.getElementsByClassName("hideme");
-//  for (var i = 0; i < x.length; i++) {
-//  if (x[i].style.display === "table-cell") {
-//    	x[i].style.display = "none";
-//  	} else {
-//    	x[i].style.display = "table-cell";
-//	}
-//  }
-//}
+function displayThis(thisID) {
+  document.getElementById(thisID).style.display = "block";
+}
 
 function getSave() {
     var foo = document.getElementById("foo");
