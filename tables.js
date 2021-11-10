@@ -307,12 +307,16 @@ function doClick() {
     var void = game.global.totalVoidMaps;
     var radon = prettify(game.global.totalRadonEarned);
     var helium = prettify(game.global.totalHeliumEarned);
-   
-    var may = document.getElementById("mayhem");
-    var pand = document.getElementById("pande");
-    may.innerHTML = mayhem;
-    pand.innerHTML = pande;
-	
+    var myStr =  "<div class='frow'>Mayhem completions: "+mayhem+"<br>";
+	myStr += "Pandemonium completions: "+pande+"<br>";
+	myStr += "Void Maps: "+void+"<br>";
+	myStr += "Last Skeletimp: "+skele+"<br>"	;	
+	myStr += "Last Presimp: "+bone+"<br>"	;
+	myStr += "Helium: "+helium+"<br>";
+	myStr += "Radon: "+radon+</div>;
+
+    var saveNotes = document.getElementById("saveNotes");
+    saveNotes.innerHTML = myStr;	
 //End notes section
     if(HZReached >= 70) specialC2s.push("Trapper");
     if(prisonClear >= 1) easyC2.push("Electricity");
