@@ -313,7 +313,7 @@ function doClick() {
 	myStr += "Last Skeletimp: "+skele+"<br>"	;	
 	myStr += "Last Presimp: "+bone+"<br>"	;
 	myStr += "Helium: "+helium+"<br>";
-	myStr += "Radon: "+radon+"</div>;
+	myStr += "Radon: "+radon+"</div>";
 
     var saveNotes = document.getElementById("saveNotes");
     saveNotes.innerHTML = myStr;	
