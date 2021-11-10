@@ -121,7 +121,19 @@ body
   border-bottom: none;
 }
 
-.notes
+.abovetable
 {
+  display: flex;
   color: #DEF2F1;
 }
+
+.mgmt
+{
+  flex: 1 1 auto;
+}
+
+.notes {
+  flex: 6 1 auto;
+  color: #DEF2F1;
+}
+
