@@ -304,12 +304,12 @@ function doClick() {
     var pande = game.global.pandCompletions;
     var skele = new Date(game.global.lastSkeletimp);
     var bone = new Date(game.global.lastBonePresimpt);
-    var void = game.global.totalVoidMaps;
+    var vm = game.global.totalVoidMaps;
     var radon = prettify(game.global.totalRadonEarned);
     var helium = prettify(game.global.totalHeliumEarned);
     var myStr =  "<div class='frow'>Mayhem completions: "+mayhem+"<br>";
 	myStr += "Pandemonium completions: "+pande+"<br>";
-	myStr += "Void Maps: "+void+"<br>";
+	myStr += "Void Maps: "+vm+"<br>";
 	myStr += "Last Skeletimp: "+skele+"<br>"	;	
 	myStr += "Last Presimp: "+bone+"<br>"	;
 	myStr += "Helium: "+helium+"<br>";
