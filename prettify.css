@@ -135,6 +135,7 @@ body
 .mgmt
 {
   flex: 1 1 auto;
+  column-gap: 20px;
 }
 
 .notes {
