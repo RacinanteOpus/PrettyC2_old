@@ -10,32 +10,23 @@
   </head>
   <body>
 
-  <textarea id="foo" placeholder="Paste Trimps save string in here, ah."></textarea>
-
-<div>
-<span>
-  <button onclick="doClick()">
-    Get Pretty Challenge Tables
-  </button>
-  <br>
-  <button onclick="getSave()">
-    Retrieve Save
-  </button>
-  <p>
-  <button onclick="myToggle()">
-    Hide/Show What-If Scenarios
-  </button>
-  <button onclick="doReset()" class="hideme">
-    Reset What-If Scenarios
-  </button>
-</span>
+<div class="abovetable">
+   <div class="mgmt">
+      <textarea id="foo" placeholder="Paste Trimps save string in here, ah."></textarea>
+      <span><button onclick="doClick()">Get Pretty Challenge Tables</button>
+      <br>
+      <button onclick="getSave()">Retrieve Save</button>
+      <p>
+      <button onclick="myToggle()">Hide/Show What-If Scenarios</button>
+      <button onclick="doReset()" class="hideme">Reset What-If Scenarios</button>
+   </div>
+   <div class="notes">
+	<span> Mayhem completions: <span id="mayhem" class="notes"></span></span>
+	<br>
+	<span> Pandemonium completions: <span id="pande" class="notes"></span></span>
+   </div>
 </div>
-<div>
-	<span class="notes"> Mayhem completions: <span id="mayhem" class="notes"></span></span>
-		<br>
-	<span class="notes"> Pandemonium completions: <span id="pande" class="notes"></span></span>
-</div>
-  <p></p>
+<p></p>
   <div class="datagrid">
 	<table border="0" id="challenges">
 		<tr>
