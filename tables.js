@@ -23,7 +23,7 @@ function displayThis(thisID) {
   document.getElementById(thisID).style.display = "block";
 }
 // functions for displaying information in save in preferred format
-	    
+	    var notation = game.options.menu.standardNotation.enabled;
 	    const notations = [
 	    	[],
 	    	'KMBTQaQiSxSpOcNoDcUdDdTdQadQidSxdSpdOdNdVUvDvTvQavQivSxvSpvOvNvTt'.split(/(?=[A-Z])/),
@@ -41,7 +41,7 @@ function displayThis(thisID) {
 	    	if (number < 10000)
 	    		return +number.toPrecision(4) + '';
 	    
-	    	if (localStorage.notation === '0') // scientific
+	    	if (notation === '0') // scientific
 	    		return number.toExponential(2).replace('+', '');
 	    
 	    	let unit = 0;
@@ -50,26 +50,11 @@ function displayThis(thisID) {
 	    		++unit;
 	    	}
 	    
-	    	let suffixes = notations[localStorage.notation || 1];
+	    	let suffixes = notations[notation || 1];
 	    	let suffix = unit > suffixes.length ? `e${3 * unit}` : suffixes[unit - 1];
 	    	return +number.toPrecision(3) + suffix;
 	    }
 	    
-	    function parse_suffixes(str) {
-	    	str = str.replace(/\*.*|[^--9+a-z]/gi, '');
-	    
-	    	let suffixes = notations[localStorage.notation === '3' ? 3 : 1];
-	    	for (let i = suffixes.length; i > 0; --i)
-	    		str = str.replace(new RegExp(suffixes[i - 1] + '$', 'i'), `E${3 * i}`);
-	    
-	    	return +str;
-	    }
-	    
-	    function check_input(field) {
-	    	let ok = isFinite(parse_suffixes(field.value));
-	    	let notation = localStorage.notation === '3' ? 'alphabetic ' : '';
-	    	field.setCustomValidity(ok ? '' : `Invalid ${notation}number: ${field.value}`);
-}
 // End preferred format functions
 function getSave() {
     var foo = document.getElementById("foo");
@@ -300,6 +285,7 @@ function doClick() {
     var totalC2 = game.global.totalSquaredReward;
 
 // Information from save for the notes area
+    
     var mayhem = game.global.mayhemCompletions;
     var pande = game.global.pandCompletions;
     var skele = new Date(game.global.lastSkeletimp);
