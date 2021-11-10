@@ -33,11 +33,15 @@ body
     display:none;
 }
 
-#saveNotes #saveNotes2
+#saveNotes
 {
     display:none;
 }
 
+#saveNotes2
+{
+    display:none;
+}
 .datagrid 
 {
   font: normal 12px/150% Courier New, Courier, monospace;
