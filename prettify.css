@@ -142,3 +142,7 @@ body
   color: #DEF2F1;
 }
 
+.frow {
+  column-count: 2;
+  column-gap: 20px;
+}
