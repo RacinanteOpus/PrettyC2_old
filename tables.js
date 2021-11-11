@@ -303,7 +303,45 @@ function doClick() {
 	myStr += "Last Presimp: "+bone+"<br>"	;
 
     var saveNotes = document.getElementById("saveNotes");
-    saveNotes.innerHTML = myStr;	
+    saveNotes.innerHTML = myStr;
+
+	var nextCost = {};
+	    nextCost["Efficiency"] = 8 * game.generatorUpgrades.Efficiency.upgrades + 8;
+	    nextCost["Capacity"] = 32 * game.generatorUpgrades.Capacity.upgrades + 32;
+	    nextCost["Supply"] = 64 * game.generatorUpgrades.Supply.upgrades + 64;
+	    nextCost["Overclocker"] = 32 * game.generatorUpgrades.Overclocker.upgrades + 512;
+	    nextCost[""] = "";
+	    
+	var mode = "";
+	if (game.global.generatorMode == 0) {mode = "Gain Magmite"} else {
+        if (game.global.generatorMode == 1) {mode = "Gain Fuel"} else {mode = "Unknown"}};
+        
+	    mystr = "Dimensional Generator Mode: " + mode + "<br>";
+	    mystr += "DG Efficiency Upgrades: " + game.generatorUpgrades.Efficiency.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Efficiency"] + "<br>";
+	    mystr += "DG Capacity Upgrades: " + game.generatorUpgrades.Capacity.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Capacity"] + "<br>";
+	    mystr += "DG Supply Upgrades: " + game.generatorUpgrades.Supply.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Supply"] + "<br>";
+	    mystr += "DG Supply Overclocker: " + game.generatorUpgrades.Overclocker.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Overclocker"] + "<br>";
+	
+	var BonusLevels = game.talents.nature2 ? 5 : 0;
+        myStr = "";
+        for (var item in game.empowerments){
+	 	var emp = game.empowerments[item];
+	 	    emp.level += BonusLevels;
+	 	var oneThird = Math.floor(emp.nextUberCost / 3);
+	 	if (oneThird > 100) oneThird = 100;
+	 	if (oneThird > 50){
+	 		emp.nextUberCost -= oneThird;
+	 	}
+	 	else{
+	 		emp.nextUberCost -= 50;
+	 	}
+	 	if (emp.nextUberCost < 0) emp.nextUberCost = 0;
+	 	myStr += emp + " Level: " + emp.level + "&nbsp;&nbsp;Next Cost" + emp.nextUberCost + "<br>";
+	}
+	
+    var saveNotes2 = document.getElementById("saveNotes2");
+    saveNotes2.innerHTML = myStr;
+	
 //End notes section
     if(HZReached >= 70) specialC2s.push("Trapper");
     if(prisonClear >= 1) easyC2.push("Electricity");
