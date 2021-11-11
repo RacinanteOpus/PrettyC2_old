@@ -305,6 +305,7 @@ function doClick() {
     var saveNotes = document.getElementById("saveNotes");
     saveNotes.innerHTML = myStr;
 
+        myStr = "";
 	var nextCost = {};
 	    nextCost["Efficiency"] = 8 * game.generatorUpgrades.Efficiency.upgrades + 8;
 	    nextCost["Capacity"] = 32 * game.generatorUpgrades.Capacity.upgrades + 32;
@@ -323,7 +324,6 @@ function doClick() {
 	    mystr += "DG Supply Overclocker: " + game.generatorUpgrades.Overclocker.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Overclocker"] + "<br>";
 	
 	var BonusLevels = game.talents.nature2 ? 5 : 0;
-        myStr = "";
         for (var item in game.empowerments){
 	 	var emp = game.empowerments[item];
 	 	    emp.level += BonusLevels;
@@ -336,7 +336,7 @@ function doClick() {
 	 		emp.nextUberCost -= 50;
 	 	}
 	 	if (emp.nextUberCost < 0) emp.nextUberCost = 0;
-	 	myStr += emp + " Level: " + emp.level + "&nbsp;&nbsp;Next Cost" + emp.nextUberCost + "<br>";
+	 	myStr += item + " Level: " + emp.level + "&nbsp;&nbsp;Next Cost" + emp.nextUberCost + "<br>";
 	}
 	
     var saveNotes2 = document.getElementById("saveNotes2");
