@@ -49,7 +49,7 @@ function displayThis(thisID) {
 	    		number /= 1000;
 	    		++unit;
 	    	}
-	    
+	        if (notation > 3) {notation = 1;};
 	    	let suffixes = notations[notation || 1];
 	    	let suffix = unit > suffixes.length ? `e${3 * unit}` : suffixes[unit - 1];
 	    	return +number.toPrecision(3) + suffix;
