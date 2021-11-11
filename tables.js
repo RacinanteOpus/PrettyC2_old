@@ -336,7 +336,7 @@ function doClick() {
 	 		emp.nextUberCost -= 50;
 	 	}
 	 	if (emp.nextUberCost < 0) emp.nextUberCost = 0;
-	 	myStr += item + " Level: " + emp.level + "&nbsp;&nbsp;Next Cost" + emp.nextUberCost + "<br>";
+	 	myStr += item + " Level: " + emp.level + "&nbsp;&nbsp;Next Cost " + emp.nextUberCost + "<br>";
 	}
 	
     var saveNotes2 = document.getElementById("saveNotes2");
