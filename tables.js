@@ -322,7 +322,8 @@ function doClick() {
 	    myStr += "DG Capacity Upgrades: " + game.generatorUpgrades.Capacity.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Capacity"] + "<br>";
 	    myStr += "DG Supply Upgrades: " + game.generatorUpgrades.Supply.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Supply"] + "<br>";
 	    myStr += "DG Supply Overclocker: " + game.generatorUpgrades.Overclocker.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Overclocker"] + "<br>";
-	var nature = game.talents.nature2;
+	
+	var nature = game.talents.nature2 || false;
 	var BonusLevels = nature ? 5 : 0;
 	alert(BonusLevels, nature);
         for (var item in game.empowerments){
