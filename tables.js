@@ -323,8 +323,8 @@ function doClick() {
 	    myStr += "DG Supply Upgrades: " + game.generatorUpgrades.Supply.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Supply"] + "<br>";
 	    myStr += "DG Supply Overclocker: " + game.generatorUpgrades.Overclocker.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Overclocker"] + "<br>";
 	
-	var BonusLevels = game.talents.nature2 ? 5 : 0;
-	console.log(JSON.stringify(game.talents));
+	var BonusLevels = game.talents.nature2.purchased ? 5 : 0;
+	console.log(JSON.stringify(game.talents.nature2));
         for (var item in game.empowerments){
 	 	var emp = game.empowerments[item];
 	 	    emp.level += BonusLevels;
