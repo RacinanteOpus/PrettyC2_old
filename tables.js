@@ -317,11 +317,11 @@ function doClick() {
 	if (game.global.generatorMode == 0) {mode = "Gain Magmite"} else {
         if (game.global.generatorMode == 1) {mode = "Gain Fuel"} else {mode = "Unknown"}};
         
-	    mystr = "Dimensional Generator Mode: " + mode + "<br>";
-	    mystr += "DG Efficiency Upgrades: " + game.generatorUpgrades.Efficiency.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Efficiency"] + "<br>";
-	    mystr += "DG Capacity Upgrades: " + game.generatorUpgrades.Capacity.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Capacity"] + "<br>";
-	    mystr += "DG Supply Upgrades: " + game.generatorUpgrades.Supply.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Supply"] + "<br>";
-	    mystr += "DG Supply Overclocker: " + game.generatorUpgrades.Overclocker.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Overclocker"] + "<br>";
+	    myStr = "Dimensional Generator Mode: " + mode + "<br>";
+	    myStr += "DG Efficiency Upgrades: " + game.generatorUpgrades.Efficiency.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Efficiency"] + "<br>";
+	    myStr += "DG Capacity Upgrades: " + game.generatorUpgrades.Capacity.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Capacity"] + "<br>";
+	    myStr += "DG Supply Upgrades: " + game.generatorUpgrades.Supply.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Supply"] + "<br>";
+	    myStr += "DG Supply Overclocker: " + game.generatorUpgrades.Overclocker.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Overclocker"] + "<br>";
 	
 	var BonusLevels = game.talents.nature2 ? 5 : 0;
         for (var item in game.empowerments){
