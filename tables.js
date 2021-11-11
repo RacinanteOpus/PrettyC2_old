@@ -317,7 +317,7 @@ function doClick() {
 	if (game.global.generatorMode == 0) {mode = "Gain Magmite"} else {
         if (game.global.generatorMode == 1) {mode = "Gain Fuel"} else {mode = "Unknown"}};
         
-	    myStr = "Dimensional Generator Mode: " + mode + "<br>";
+	    myStr = "<div class='frow'>Dimensional Generator Mode: " + mode + "<br>";
 	    myStr += "DG Efficiency Upgrades: " + game.generatorUpgrades.Efficiency.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Efficiency"] + "<br>";
 	    myStr += "DG Capacity Upgrades: " + game.generatorUpgrades.Capacity.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Capacity"] + "<br>";
 	    myStr += "DG Supply Upgrades: " + game.generatorUpgrades.Supply.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Supply"] + "<br>";
@@ -338,7 +338,7 @@ function doClick() {
 	 	if (emp.nextUberCost < 0) emp.nextUberCost = 0;
 	 	myStr += item + " Level: " + emp.level + "&nbsp;&nbsp;Next Cost " + emp.nextUberCost + "<br>";
 	}
-	
+    myStr += "</div>";	
     var saveNotes2 = document.getElementById("saveNotes2");
     saveNotes2.innerHTML = myStr;
 	
