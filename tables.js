@@ -240,14 +240,6 @@ function getBasicC2(HZE, isMesmer, challenge = "standard") {
       currentBonus = 3;
       break;
     }
-    case "Glass":
-    {
-      zonesForBonus = 10;
-      zonesForBonusIncrease = 100;
-      bonusIncrease = 1;
-      currentBonus = 1;
-      break;
-    }
     default:
     {
       zonesForBonus = 10;
