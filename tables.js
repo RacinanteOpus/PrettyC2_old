@@ -372,19 +372,20 @@ function doClick() {
 	
 		var BonusLevels = game.talents.nature2.purchased ? 5 : 0;
 
-        for (var item in game.empowerments){
-	 	var emp = game.empowerments[item];
-	 	    emp.level += BonusLevels;
-	 	var oneThird = Math.floor(emp.nextUberCost / 3);
-	 	if (oneThird > 100) oneThird = 100;
-	 	if (oneThird > 50){
+        	for (var item in game.empowerments){
+		 	var emp = game.empowerments[item];
+	 		emp.level += BonusLevels;
+	 		var oneThird = Math.floor(emp.nextUberCost / 3);
+	 		if (oneThird > 100) oneThird = 100;
+	 		if (oneThird > 50){
 	 		emp.nextUberCost -= oneThird;
-	 	}
-	 	else{
+	 		}
+	 		else {
 	 		emp.nextUberCost -= 50;
-	 	}
+	 		}
 	 	if (emp.nextUberCost < 0) emp.nextUberCost = 0;
 	 	myStr += item + " Level: " + emp.level + "&nbsp;&nbsp;Next Cost " + emp.nextUberCost + "<br>";
+		} 
 	} else { myStr += "You need to reach zone 236 to see this information.<br><br>"; }
     myStr += "</div>";	
     var saveNotes2 = document.getElementById("saveNotes2");
