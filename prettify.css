@@ -150,5 +150,5 @@ body
 .frow {
   column-count: 2;
   column-gap: 20px;
-  margin: 20px;
+  margin-left: 20px;
 }
