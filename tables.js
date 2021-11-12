@@ -349,7 +349,7 @@ function doClick() {
     var saveNotes = document.getElementById("saveNotes");
     saveNotes.innerHTML = myStr;
 
-        myStr = "";
+        myStr = "<div class='frow'>";
 	var nextCost = {};
 	    nextCost["Efficiency"] = 8 * game.generatorUpgrades.Efficiency.upgrades + 8;
 	    nextCost["Capacity"] = 32 * game.generatorUpgrades.Capacity.upgrades + 32;
@@ -360,14 +360,17 @@ function doClick() {
 	var mode = "";
 	if (game.global.generatorMode == 0) {mode = "Gain Magmite"} else {
         if (game.global.generatorMode == 1) {mode = "Gain Fuel"} else {mode = "Unknown"}};
-        
-	    myStr = "<div class='frow'>Dimensional Generator Mode: " + mode + "<br>";
+        if (HZReached > 229) {
+	    myStr += "Dimensional Generator Mode: " + mode + "<br>";
 	    myStr += "DG Efficiency Upgrades: " + game.generatorUpgrades.Efficiency.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Efficiency"] + "<br>";
 	    myStr += "DG Capacity Upgrades: " + game.generatorUpgrades.Capacity.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Capacity"] + "<br>";
 	    myStr += "DG Supply Upgrades: " + game.generatorUpgrades.Supply.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Supply"] + "<br>";
 	    myStr += "DG Supply Overclocker: " + game.generatorUpgrades.Overclocker.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Overclocker"] + "<br>";
+	} else { myStr += "You need to reach zone 230 to see this information.<br><br>"; }
 	
-	var BonusLevels = game.talents.nature2.purchased ? 5 : 0;
+	if (HZReached > 235) {
+	
+		var BonusLevels = game.talents.nature2.purchased ? 5 : 0;
 
         for (var item in game.empowerments){
 	 	var emp = game.empowerments[item];
@@ -382,7 +385,7 @@ function doClick() {
 	 	}
 	 	if (emp.nextUberCost < 0) emp.nextUberCost = 0;
 	 	myStr += item + " Level: " + emp.level + "&nbsp;&nbsp;Next Cost " + emp.nextUberCost + "<br>";
-	}
+	} else { myStr += "You need to reach zone 236 to see this information.<br><br>"; }
     myStr += "</div>";	
     var saveNotes2 = document.getElementById("saveNotes2");
     saveNotes2.innerHTML = myStr;
