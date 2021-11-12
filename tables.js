@@ -330,11 +330,11 @@ function doClick() {
     var radon = prettify(game.global.totalRadonEarned);
     var helium = prettify(game.global.totalHeliumEarned);
     var myStr =  "<div class='frow'>";
-        myStr += (mayhem) ? "Mayhem completions: "+mayhem+"<br>" : "";
-	myStr += (pande) ? "Pandemonium completions: "+pande+"<br>" : "";
+        myStr += (mayhem) ? "Mayhem completions: "+mayhem+"<br>" : " ";
+	myStr += (pande) ? "Pandemonium completions: "+pande+"<br>" : " ";
 	myStr += "Helium: "+helium+"<br>";
-	myStr += (game.global.totalRadonEarned) ? "Radon: "+radon+"</div>" : "";
-	myStr += (game.global.totalPortals > 4) ? "Void Maps: "+vm+"<br>": "";
+	myStr += (game.global.totalRadonEarned) ? "Radon: "+radon+"<br>" : " ";
+	myStr += (game.global.totalPortals > 4) ? "Void Maps: "+vm+"<br>": " ";
 	myStr += "Last Skeletimp: "+skele+"<br>"	;	
 	myStr += "Last Presimp: "+bone+"<br>"	;
 
