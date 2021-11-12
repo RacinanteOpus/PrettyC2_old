@@ -336,7 +336,7 @@ function doClick() {
 	myStr += (game.global.totalRadonEarned) ? "Radon: "+radon+"<br>" : " ";
 	myStr += (game.global.totalPortals > 4) ? "Void Maps: "+vm+"<br>": " ";
 	myStr += "Last Skeletimp: "+skele+"<br>"	;	
-	myStr += "Last Presimp: "+bone+"<br>"	;
+	myStr += "Last Presimp: "+bone+"</div>"	;
 
     var saveNotes = document.getElementById("saveNotes");
     saveNotes.innerHTML = myStr;
