@@ -1,6 +1,5 @@
 var game="";
 var notation=1;
-document.getElementById("foo").addEventListener("paste", doClick);
 
 function numberWithCommas(x,y) {
     return x.toFixed(y).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
