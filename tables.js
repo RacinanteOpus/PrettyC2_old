@@ -334,7 +334,7 @@ function doClick() {
 	myStr += (pande) ? "Pandemonium completions: "+pande+"<br>" : "";
 	myStr += "Helium: "+helium+"<br>";
 	myStr += (game.global.totalRadonEarned) ? "Radon: "+radon+"</div>" : "";
-	myStr += "Void Maps: "+vm+"<br>";
+	myStr += (game.global.totalPortals > 4) ? "Void Maps: "+vm+"<br>": "";
 	myStr += "Last Skeletimp: "+skele+"<br>"	;	
 	myStr += "Last Presimp: "+bone+"<br>"	;
 
