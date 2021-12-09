@@ -119,7 +119,6 @@ function fluffyLvl(number){
 	var evo = 0;
 	var lvl = 0;
 	var exp = 1000;
-	alert (exp);
 	do {
 		if (number > exp) {
 			number -= exp;
@@ -128,17 +127,17 @@ function fluffyLvl(number){
 			if (lvl = 10) {
 				lvl = 0;
 				evo +=1;
-				exp = 5^evo * 1000;
+				exp = Math.pow(5,evo) * 1000;
 			}
 		} else {
 			if (evo==11) {
 				evo -=1;
 				lvl = 10;
-				alert (evo, lvl, "F"+evo.toString()+"L"+lvl.toString());
+				alert (evo && " " && lvl && "F"&&evo.toString()&&"L"&&lvl.toString());
 				return "F"+evo.toString()+"L"+lvl.toString();
 				//return "";
 			} else { 
-				alert (evo, lvl, "F"+evo.toString()+"L"+lvl.toString());
+				alert (evo && " " && lvl && "F"&&evo.toString()&&"L"&&lvl.toString());
 				return "F"+evo.toString()+"L"+lvl.toString();
 			}
 		}
