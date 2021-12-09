@@ -99,7 +99,7 @@ function prettifySub(number){
 	return number.toFixed(3 - floor.toString().length);
 }
 
-function Scruffy(number){
+function scruffyLvl(number){
 	number = parseFloat(number);
 	var scruffyLevel = 0;
 	var exp = 1000;
@@ -114,7 +114,7 @@ function Scruffy(number){
 	} while (exp > 0);
 }
 
-function fluffy(number){
+function fluffyLvl(number){
 	number = parseFloat(number);
 	var evo = 0;
 	var lvl = 0;
@@ -372,8 +372,8 @@ function doClick() {
     var vm = game.global.totalVoidMaps;
     var radon = prettify(game.global.totalRadonEarned);
     var helium = prettify(game.global.totalHeliumEarned);
-    var scruffy = prettify(Scruffy(game.global.fluffyExp2));
-    var fluffy = fluffy(game.global.fluffyExp);
+    var scruffy = prettify(scruffyLvl(game.global.fluffyExp2));
+    var fluffy = fluffyLvl(game.global.fluffyExp);
     var myStr =  "<div class='frow'>";
         myStr += (mayhem) ? "Mayhem completions: "+mayhem+"<br>" : " ";
 	myStr += (pande) ? "Pandemonium completions: "+pande+"<br>" : " ";
