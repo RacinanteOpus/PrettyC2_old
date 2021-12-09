@@ -124,7 +124,6 @@ function fluffyLvl(number){
 			number -= exp;
 			lvl +=1;
 			exp *= 4;
-			alert (exp.toString()+" "+number.toString())
 			if (lvl == 10) {
 				lvl = 0;
 				evo +=1;
@@ -134,10 +133,10 @@ function fluffyLvl(number){
 			if (evo==11) {
 				evo -=1;
 				lvl = 10;
-				return "F"+evo.toString()+"L"+lvl.toString();
+				return "E"+evo.toString()+"L"+lvl.toString();
 				//return "";
 			} else { 
-				return "F"+evo.toString()+"L"+lvl.toString();
+				return "E"+evo.toString()+"L"+lvl.toString();
 			}
 		}
 	} while (exp > 0);
