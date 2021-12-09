@@ -125,7 +125,7 @@ function fluffyLvl(number){
 			lvl +=1;
 			exp *= 4;
 			alert (exp.toString()+" "+number.toString())
-			if (lvl = 10) {
+			if (lvl == 10) {
 				lvl = 0;
 				evo +=1;
 				exp = Math.pow(5,evo) * 1000;
