@@ -111,7 +111,7 @@ function Scruffy(number){
 		} else {
 			return scruffyLevel;
 		}
-	} 
+	} while (exp > 0);
 }
 
 // End preferred format functions
