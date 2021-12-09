@@ -133,10 +133,10 @@ function fluffyLvl(number){
 			if (evo==11) {
 				evo -=1;
 				lvl = 10;
-				return "F"+evo+"L"+lvl;
+				return "F"+evo.toString()+"L"+lvl.toString();
 				//return "";
 			} else { 
-				return "F"+evo+"L"+lvl;
+				return "F"+evo.toString()+"L"+lvl.toString();
 			}
 		}
 	} while (exp > 0);
