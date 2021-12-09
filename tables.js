@@ -372,10 +372,12 @@ function doClick() {
     var radon = prettify(game.global.totalRadonEarned);
     var helium = prettify(game.global.totalHeliumEarned);
     var scruffy = prettify(Scruffy(game.global.fluffyExp2));
+    var fluffy = fluffy(game.global.fluffyExp));
     var myStr =  "<div class='frow'>";
         myStr += (mayhem) ? "Mayhem completions: "+mayhem+"<br>" : " ";
 	myStr += (pande) ? "Pandemonium completions: "+pande+"<br>" : " ";
 	myStr += (scruffy) ? "Scruffy level: "+scruffy+"<br>" : " ";
+	myStr += (fluffy != "") ? "Fluffy level: "+fluffy+"<br>" : " ";
 	myStr += "Helium: "+helium+"<br>";
 	myStr += (game.global.totalRadonEarned) ? "Radon: "+radon+"<br>" : " ";
 	myStr += (game.global.totalPortals > 4) ? "Void Maps: "+vm+"<br>": " ";
