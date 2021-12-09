@@ -99,6 +99,21 @@ function prettifySub(number){
 	return number.toFixed(3 - floor.toString().length);
 }
 
+function Scruffy(number){
+	number = parseFloat(number);
+	var scruffyLevel = 0;
+	var exp = 1000;
+	do {
+		if (number > exp) {
+			number -= exp;
+			scruffyLevel +=1;
+			exp *= 4;
+		} else {
+			return scruffyLevel;
+		}
+	} 
+}
+
 // End preferred format functions
 function getSave() {
     var foo = document.getElementById("foo");
