@@ -138,6 +138,7 @@ function fluffy(number){
 			} else { 
 				return "F"+evo+"L"+lvl;
 			}
+		}
 	} while (exp > 0);
 }
 // End preferred format functions
