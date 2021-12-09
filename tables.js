@@ -119,7 +119,7 @@ function fluffyLvl(number){
 	var evo = 0;
 	var lvl = 0;
 	var exp = 1000;
-	alert (number, "-", parseInt(exp));
+	alert (exp);
 	do {
 		if (number > exp) {
 			number -= exp;
