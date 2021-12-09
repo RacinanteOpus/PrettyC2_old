@@ -114,6 +114,32 @@ function Scruffy(number){
 	} while (exp > 0);
 }
 
+function fluffy(number){
+	number = parseFloat(number);
+	var evo = 0;
+	var lvl = 0;
+	var exp = 1000;
+	do {
+		if (number > exp) {
+			number -= exp;
+			lvl +=1;
+			exp *= 4;
+			if (lvl = 10) {
+				lvl = 0;
+				evo +=1;
+				exp = 5^evo * 1000;
+			}
+		} else {
+			if (evo==11) {
+				evo -=1;
+				lvl = 10;
+				return "F"+evo+"L"+lvl;
+				//return "";
+			} else { 
+				return "F"+evo+"L"+lvl;
+			}
+	} while (exp > 0);
+}
 // End preferred format functions
 function getSave() {
     var foo = document.getElementById("foo");
