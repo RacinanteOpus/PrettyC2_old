@@ -381,7 +381,7 @@ function doClick() {
 	newStr += (pande) ? "P"+pande+ " " : "";
 	newStr += (mayhem && mayhem < 25) ? "M"+mayhem + " ": ""; 
 	newStr += (game.global.totalRadonEarned) ? radon  + " " : helium + " "; 
-	newStr += (totalC2) ? prettify(totalC2) + " " : "";
+	newStr += (totalC2) ? prettify(totalC2) + " c<span class='icomoon icon-infinity'></span>" : "";
 	newStr += (game.global.fluffyExp2) ? "S" + scruffy + " " : fluffy + " ";
 	newStr += (game.global.autoBattleData.dust) ? "SA" + Math.floor(game.global.autoBattleData.maxEnemyLevel-1) + " " : "";
 	newStr += "</b></div>";
