@@ -1,3 +1,5 @@
+//  To do: add logic for saving and retrieving customized strings in localstorage for pasting into discord
+
 var game="";
 var notation=1;
 
@@ -134,7 +136,15 @@ function fluffyLvl(number){
 		}
 	} while (exp > 0);
 }
-// End preferred format functions
+
+var formatString = "";
+
+function saveString() {
+}
+
+function getString() {
+}
+
 function getSave() {
     var foo = document.getElementById("foo");
     foo.value = localStorage.getItem("trimpSave");
