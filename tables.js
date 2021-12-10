@@ -9,7 +9,7 @@ var hasMesmer, HZReached, radHZReached, prisonClear, totalC2, mayhem, pande, ske
 
 function updateGlobals() {
 	notation = game.options.menu.standardNotation.enabled;
-	bones = game.global.b;
+	bones = numberWithCommas(game.global.b);
 	hasMesmer = game.talents.mesmer.purchased;
 	HZReached = game.global.highestLevelCleared+1;
 	radHZReached = (game.global.fluffyPrestige > 8) ? game.global.highestRadonLevelCleared+1 : 0;
@@ -531,7 +531,7 @@ function doClick() {
 	myStr += (pande) ? "Pandemonium completions: "+pande+"<br>" : " ";
 	myStr += (game.global.fluffyExp2) ? "Scruffy level: "+scruffy+"<br>" : " ";
 	myStr += (fluffy != "E10L10" && fluffy) ? "Fluffy level: "+fluffy+"<br>" : " ";
-	myStr += "Helium: "+helium+" HZE: "+Math.floor(game.global.highestLevelCleared+1)+"<br>";
+	myStr += "Helium: "+helium+" HZE: "+Math.floor(game.global.highestLevelCleared+1)+" Bones: "+bones+"<br>";
 	myStr += (game.global.totalRadonEarned) ? "Radon: "+radon+" HZE: "+Math.floor(game.global.highestRadonLevelCleared+1)+"<br>" : " ";
 	myStr += (game.global.totalPortals > 4) ? "Void Maps: "+vm+" ": "";
 	myStr += (game.portal.Observation.trinkets) ? ", Runetrinkets: "+numberWithCommas(game.portal.Observation.trinkets)+"<br>": "<br>";
