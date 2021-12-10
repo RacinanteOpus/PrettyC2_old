@@ -395,7 +395,7 @@ function doClick() {
 	newStr += (totalC2) ?  prettify(totalC2) + "% " : "";
 	newStr += (game.global.fluffyExp2) ? "S" + scruffy + " " : fluffy + " ";
 	newStr += (game.global.autoBattleData.dust) ? "SA" + Math.floor(game.global.autoBattleData.maxEnemyLevel-1) + " " : "";
-	newStr += "</b><button id="myBtnx"><-- Customize this string.</button></div>";
+	newStr += "</b><button id="myBtnx" onClick="doModal();"><-- Customize this string.</button></div>";
 
     var saveNotes = document.getElementById("saveNotes");
     saveNotes.innerHTML = myStr+newStr;
