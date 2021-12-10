@@ -371,7 +371,7 @@ function doClick() {
         myStr += (mayhem) ? "Mayhem completions: "+mayhem+"<br>" : " ";
 	myStr += (pande) ? "Pandemonium completions: "+pande+"<br>" : " ";
 	myStr += (game.global.fluffyExp2) ? "Scruffy level: "+scruffy+"<br>" : " ";
-	myStr += (game.global.fluffyExp) ? "Fluffy level: "+fluffy+"<br>" : " ";
+	myStr += (fluffy) ? "Fluffy level: "+fluffy+"<br>" : " ";
 	myStr += "Helium: "+helium+" HZE: "+Math.floor(game.global.highestLevelCleared+1)+"<br>";
 	myStr += (game.global.totalRadonEarned) ? "Radon: "+radon+" HZE: "+Math.floor(game.global.highestRadonLevelCleared+1)+"<br>" : " ";
 	myStr += (game.global.totalPortals > 4) ? "Void Maps: "+vm+" ": "";
