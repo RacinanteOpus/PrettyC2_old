@@ -384,7 +384,7 @@ function doClick() {
 	newStr += (game.global.totalRadonEarned) ? radon  + " " : helium + " "; 
 	newStr += (totalC2) ? prettify(totalC2) + " " : "";
 	newStr += (game.global.fluffyExp2) ? "S" + scruffy + " " : fluffy + " ";
-	newStr += (game.global.autoBattleData.dust) ? "SA" + game.global.autoBattleData.maxEnemyLevel-1 + " " : "";
+	newStr += (game.global.autoBattleData.dust) ? "SA" + Math.floor(game.global.autoBattleData.maxEnemyLevel-1) + " " : "";
 	newStr += "</div>";
 
     var saveNotes = document.getElementById("saveNotes");
