@@ -230,6 +230,12 @@ function saveString() {
 function getString() {
 }
 
+function doMyString() {
+	//dismiss modal
+	getElementById("").innerHTML = previewString;
+	saveString();
+}
+
 function getSave() {
     var foo = document.getElementById("foo");
     foo.value = localStorage.getItem("trimpSave");
