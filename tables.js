@@ -118,7 +118,7 @@ function fluffyLvl(number){
 	number = parseFloat(number);
 	var lvl = 0;
 	var plvl = game.global.fluffyPrestige;
-	var exp = Math.pow(5,plvl);
+	var exp = Math.pow(5,plvl) * 1000;
 	do {
 		if (number > exp) {
 			number -= exp;
