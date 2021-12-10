@@ -380,9 +380,9 @@ function doClick() {
     var newStr = "<div class='frow'><b>";
 	newStr += (pande) ? "P"+pande+ " " : "";
 	newStr += (mayhem && mayhem < 25) ? "M"+mayhem + " ": ""; 
-	newStr += (game.global.totalRadonEarned) ? "R" + radon  + " " : "H" + helium + " "; 
-	newStr += (totalC2) ?  "c<sup>&infin;</sup>" + prettify(totalC2) + " " : "";
-	newStr += (game.global.fluffyExp2) ? "S" + scruffy + " " : "F:" + fluffy + " ";
+	newStr += (game.global.totalRadonEarned) ? radon + " " : helium + " "; 
+	newStr += (totalC2) ?  prettify(totalC2) + "% " : "";
+	newStr += (game.global.fluffyExp2) ? "S" + scruffy + " " : fluffy + " ";
 	newStr += (game.global.autoBattleData.dust) ? "SA" + Math.floor(game.global.autoBattleData.maxEnemyLevel-1) + " " : "";
 	newStr += "</b></div>";
 
