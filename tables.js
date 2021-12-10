@@ -172,6 +172,7 @@ function previewUpdate() {  //called using an onChange event in a <select> state
 	tempPrefs=[];
 	previewString = "";
 	var potentialItems = 10;  //# of select options
+	alert("In previewUpdate()");
 	for (let i = 1; i < potentialItems+1; i++) {
 		thisSelect = document.getElementById("myString"+i).selectedIndex.value;
 		switch (thisSelect) {
@@ -538,7 +539,7 @@ function doClick() {
 
     var saveNotes = document.getElementById("saveNotes");
     saveNotes.innerHTML = myStr+newStr;
-
+    
         myStr = "<div class='frow'>";
 
 	if (HZReached > 229) {
