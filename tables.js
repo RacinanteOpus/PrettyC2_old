@@ -378,14 +378,14 @@ function doClick() {
 	myStr += (game.portal.Observation.trinkets) ? ", Runetrinkets: "+numberWithCommas(game.portal.Observation.trinkets)+"<br>": "<br>";
 	myStr += "Last Skeletimp: "+skele+"<br>"	;	
 	myStr += "Last Presimp: "+bone+"</div>"	;
-    var newStr = "<div class='frow'><b>";
+    var newStr = "<div class='frow'><b id='ModString'>";
 	newStr += (pande) ? "P"+pande+ " " : "";
 	newStr += (mayhem && mayhem < 25) ? "M"+mayhem + " ": ""; 
 	newStr += (game.global.totalRadonEarned) ? radon + " " : helium + " "; 
 	newStr += (totalC2) ?  prettify(totalC2) + "% " : "";
 	newStr += (game.global.fluffyExp2) ? "S" + scruffy + " " : fluffy + " ";
 	newStr += (game.global.autoBattleData.dust) ? "SA" + Math.floor(game.global.autoBattleData.maxEnemyLevel-1) + " " : "";
-	newStr += "</b></div>";
+	newStr += "</b><button id="myBtnx"><-- Customize this string.</button></div>";
 
     var saveNotes = document.getElementById("saveNotes");
     saveNotes.innerHTML = myStr+newStr;
