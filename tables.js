@@ -28,7 +28,7 @@ function displayThis(thisID) {
 
 function prettify(number) {
 	var numberTmp = number;
-	if (!isFinite(number)) return "<span class='icomoon icon-infinity'></span>";
+	if (!isFinite(number)) return "&infin;";
 	if (number >= 1000 && number < 10000) return Math.floor(number);
 	if (number == 0) return prettifySub(0);
 	if (number < 0) return "-" + prettify(-number);
@@ -381,7 +381,7 @@ function doClick() {
 	newStr += (pande) ? "P"+pande+ " " : "";
 	newStr += (mayhem && mayhem < 25) ? "M"+mayhem + " ": ""; 
 	newStr += (game.global.totalRadonEarned) ? radon  + " " : helium + " "; 
-	newStr += (totalC2) ? prettify(totalC2) + " c<span class='icomoon icon-infinity'></span>" : "";
+	newStr += (totalC2) ? prettify(totalC2) + " c&infin;" : "";
 	newStr += (game.global.fluffyExp2) ? "S" + scruffy + " " : fluffy + " ";
 	newStr += (game.global.autoBattleData.dust) ? "SA" + Math.floor(game.global.autoBattleData.maxEnemyLevel-1) + " " : "";
 	newStr += "</b></div>";
