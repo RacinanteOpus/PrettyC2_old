@@ -169,11 +169,13 @@ function fluffyLvl(number){
 
 function previewUpdate() {  //called using an onChange event in a <select> statement
 	var thisSelect;
+	var theElement;
 	tempPrefs=[];
 	previewString = "";
 	var potentialItems = 10;  //# of select options
 	for (let i = 1; i < potentialItems+1; i++) {
-		thisSelect = document.getElementById("myString"+i).selectedIndex.value;
+		theElement = document.getElementById("myString"+i);
+		thisSelect = theElement.options[theElement.selectedIndex].value;
 		alert(thisSelect);
 		switch (thisSelect) {
 			case "h": { //Helium
