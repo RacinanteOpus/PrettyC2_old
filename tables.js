@@ -4,7 +4,8 @@ var game="";
 var notation=1;
 var nextCost = {};
 
-var hasMesmer, HZReached, radHZReached, prisonClear, totalC2, mayhem, pande, skele, bone, vm, radon, helium, fluffy, bones, mode, previewString, preferences, tempPrefs ;
+var hasMesmer, HZReached, radHZReached, prisonClear, totalC2, mayhem, pande, skele, bone, vm, radon, helium, 
+    fluffy, bones, mode, previewString, preferences, tempPrefs, trinkets ;
 
 function updateGlobals() {
 	notation = game.options.menu.standardNotation.enabled;
@@ -23,6 +24,7 @@ function updateGlobals() {
 	helium = prettify(game.global.totalHeliumEarned);
 	scruffy = prettify(scruffyLvl(game.global.fluffyExp2));
 	fluffy = fluffyLvl(game.global.fluffyExp);
+	trinkets = numberWithCommas(game.portal.Observation.trinkets);
 	nextCost["Efficiency"] = 8 * game.generatorUpgrades.Efficiency.upgrades + 8;
 	nextCost["Capacity"] = 32 * game.generatorUpgrades.Capacity.upgrades + 32;
 	nextCost["Supply"] = 64 * game.generatorUpgrades.Supply.upgrades + 64;
@@ -217,9 +219,14 @@ function previewUpdate() {  //called using an onChange event in a <select> state
 				tempPrefs.push("c");
 				break;
 			}
-			case "sa": { //Spire Challenge completions
+			case "t": { //Runetrinkets total
+				previewString += prettify(trinkets) + " " ;
+				tempPrefs.push("t");
+				break;
+			}
+			case "a": { //Spire Challenge completions
 				previewString += "SA" + Math.floor(game.global.autoBattleData.maxEnemyLevel-1) + " ";
-				tempPrefs.push("sa");
+				tempPrefs.push("a");
 				break;
 			}
 			default: {
@@ -281,7 +288,11 @@ function getString() {
 				previewString += prettify(totalC2) + "% " ;
 				break;
 			}
-			case "sa": { //Spire Challenge completions
+			case "t": { //Challenge total
+				previewString += prettify(trinkets) + "% " ;
+				break;
+			}
+			case "a": { //Spire Challenge completions
 				previewString += "SA" + Math.floor(game.global.autoBattleData.maxEnemyLevel-1) + " ";
 				break;
 			}
