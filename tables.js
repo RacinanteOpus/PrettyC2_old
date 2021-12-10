@@ -381,10 +381,11 @@ function doClick() {
     var newStr = "<div class='frow'>";
 	newStr += (pande) ? "P"+pande+ " " : "";
 	newStr += (mayhem && mayhem < 25) ? "M"+mayhem + " ": ""; 
-	newStr += (game.global.totalRadonEarned) ? radon  + " " : ""; 
-	newStr += (game.global.totalRadonEarned) ? "Radon: "+radon + " " : " ";
+	newStr += (game.global.totalRadonEarned) ? radon  + " " : helium + " "; 
 	newStr += (totalC2) ? prettify(totalC2) + " " : "";
-	
+	newStr += (game.global.fluffyExp2) ? "S" + scruffy + " " : fluffy + " ";
+	newStr += (game.global.autoBattledata.dust) ? "SA" + game.global.autoBattledata.maxEnemyLevel-1 + " " : "";
+	newStr += "</div>";
 
     var saveNotes = document.getElementById("saveNotes");
     saveNotes.innerHTML = myStr;
