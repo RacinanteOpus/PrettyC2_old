@@ -245,7 +245,7 @@ function saveString() {
 
 function getString() {
 	preferences = localStorage.getItem("prefString");
-	alert(preferences);
+	console.log(preferences);
 	if (preferences === null) {
 		return;
 	}
