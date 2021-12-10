@@ -248,6 +248,7 @@ function getString() {
 	if (preferences === null) {
 		return;
 	}
+	alert(preferences);
 	previewString = "";
 	for (let i = 0; i < preferences; i++) {
 		thisSelect = preferences[i];
