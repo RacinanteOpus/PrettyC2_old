@@ -174,6 +174,7 @@ function previewUpdate() {  //called using an onChange event in a <select> state
 	var potentialItems = 10;  //# of select options
 	for (let i = 1; i < potentialItems+1; i++) {
 		thisSelect = document.getElementById("myString"+i).selectedIndex.value;
+		alert(thisSelect);
 		switch (thisSelect) {
 			case "h": { //Helium
 				previewString += helium + " ";
@@ -230,7 +231,6 @@ function previewUpdate() {  //called using an onChange event in a <select> state
 			}
 		}
 	}
-	alert(previewString);
 	document.getElementById("preView").innerHTML = previewString;
 }
 
