@@ -168,20 +168,80 @@ function fluffyLvl(number){
 }
 
 function previewUpdate() {  //called using an onChange event in a <select> statement
-	var myOptions = getElementById("");
+	var thisSelect;
 	var optOrder = 1;
 	var previewString = "";
 	var potentialItems = 10;  //# of select options
-	
+	for (let i = 1; i < potentialItems+1; i++) {
+		thisSelect = document.getElementById("myString"+i).selectedIndex.value;
+		switch (challenge) {
+			case "h": { //Helium
+				previewString += helium + " ";
+				break;
+			}
+			case "r": { //Radon
+				previewString += radon + " ";
+				break;
+			}
+			case "h1": { //U1 HZE
+				previewString += "U1:"+ HZReached + " ";
+				break;
+			}
+			case "r1": { //U2 HZE
+				previewString += "U2:"+ radHZReached + " ";
+				break;
+			}
+			case "f": { //Fluffy level
+				previewString += fluffy + " ";
+				break;
+			}
+			case "s": { //Scruffy level
+				previewString += "S" + scruffy + " ";
+				break;
+			}
+			case "p": { //Pandemonium completions
+				previewString += "P" + pande + " ";
+				break;
+			}
+			case "m": { //Mayhem completions
+				previewString += "M" + mayhem + " ";
+				break;
+			}
+			case "c": { //Challenge total
+				previewString += prettify(totalC2) + "% " ;
+				break;
+			}
+			case "sa": { //Spire Challenge completions
+				previewString += "SA" + Math.floor(game.global.autoBattleData.maxEnemyLevel-1) + " ";
+				break;
+			}
+			default: {
+				break;
+			}
+		}
+
+	}
+	//myString1 - myString10
 	//ModString  <-- final destination
 	//preView    <-- preview destination
-	newStr += (pande) ? "P"+pande+ " " : "";
+	newStr += (pande) ?  : "";
 	newStr += (mayhem && mayhem < 25) ? "M"+mayhem + " ": ""; 
 	newStr += (game.global.totalRadonEarned) ? radon + " " : helium + " "; 
 	newStr += (totalC2) ?  prettify(totalC2) + "% " : "";
 	newStr += (game.global.fluffyExp2) ? "S" + scruffy + " " : fluffy + " ";
 	newStr += (game.global.autoBattleData.dust) ? "SA" + Math.floor(game.global.autoBattleData.maxEnemyLevel-1) + " " : "";
-	newStr += "</b><button id='myBtnx' onClick='modal.style.display = \"block\";'> <-- Customize this string. </button></div>";
+	
+        myStr += (mayhem) ? "Mayhem completions: "+mayhem+"<br>" : " ";
+	myStr += (pande) ? "Pandemonium completions: "+pande+"<br>" : " ";
+	myStr += (game.global.fluffyExp2) ? "Scruffy level: "+scruffy+"<br>" : " ";
+	myStr += (fluffy) ? "Fluffy level: "+fluffy+"<br>" : " ";
+	myStr += "Helium: "+helium+" HZE: "+Math.floor(game.global.highestLevelCleared+1)+"<br>";
+	myStr += (game.global.totalRadonEarned) ? "Radon: "+radon+" HZE: "+Math.floor(game.global.highestRadonLevelCleared+1)+"<br>" : " ";
+	myStr += (game.global.totalPortals > 4) ? "Void Maps: "+vm+" ": "";
+	myStr += (game.portal.Observation.trinkets) ? ", Runetrinkets: "+numberWithCommas(game.portal.Observation.trinkets)+"<br>": "<br>";
+	myStr += "Last Skeletimp: "+skele+"<br>"	;	
+	myStr += "Last Presimp: "+bone+"</div>"	;
+    var newStr = "<div class='frow'><b id='ModString'>";
 }
 
 var formatString = "";
