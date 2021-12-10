@@ -372,9 +372,10 @@ function doClick() {
 	myStr += (pande) ? "Pandemonium completions: "+pande+"<br>" : " ";
 	myStr += (game.global.fluffyExp2) ? "Scruffy level: "+scruffy+"<br>" : " ";
 	myStr += (game.global.fluffyExp) ? "Fluffy level: "+fluffy+"<br>" : " ";
-	myStr += "Helium: "+helium+"<br>";
-	myStr += (game.global.totalRadonEarned) ? "Radon: "+radon+"<br>" : " ";
-	myStr += (game.global.totalPortals > 4) ? "Void Maps: "+vm+"<br>": " ";
+	myStr += "Helium: "+helium+" HZE: "+Math.floor(highestLevelCleared+1)+"<br>";
+	myStr += (game.global.totalRadonEarned) ? "Radon: "+radon+"+" HZE: "+Math.floor(highestRadonLevelCleared+1)+"<br>" : " ";
+	myStr += (game.global.totalPortals > 4) ? "Void Maps: "+vm+" ": "";
+	myStr += (game.global.portal.Observation.trinkets) ? "Trinkets: "+numberWithCommas(game.global.portal.Observation.trinkets)+"<br>": "<br>";
 	myStr += "Last Skeletimp: "+skele+"<br>"	;	
 	myStr += "Last Presimp: "+bone+"</div>"	;
     var newStr = "<div class='frow'><b>";
