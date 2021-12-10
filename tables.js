@@ -118,20 +118,18 @@ function fluffyLvl(number){
 	number = parseFloat(number);
 	var lvl = 0;
 	var plvl = game.global.fluffyPrestige;
-	var exp = Math.pow(5,game.global.fluffyPrestige);
+	var exp = Math.pow(5,plvl);
 	do {
 		if (number > exp) {
 			number -= exp;
 			lvl +=1;
 			exp *= 4;
 		} else {
-			if (evo==11) {
-				evo -=1;
-				lvl = 10;
-				return "E"+game.global.fluffyPrestige.toString()+"L"+lvl.toString();
+			if (lvl>=10 && plvl=>10) {
+				return "E"+plvl.toString()+"L"+lvl.toString();
 				//return "";
 			} else { 
-				return "E"+game.global.fluffyPrestige.toString()+"L"+lvl.toString();
+				return "E"+plvl.toString()+"L"+lvl.toString();
 			}
 		}
 	} while (exp > 0);
