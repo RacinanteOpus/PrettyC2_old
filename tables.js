@@ -4,7 +4,7 @@ var game="";
 var notation=1;
 var nextCost = {};
 
-var hasMesmer, HZReached, radHZReached, prisonClear, totalC2, mayhem, pande, skele, bone, vm, radon, helium, fluffy, bones, mode ;
+var hasMesmer, HZReached, radHZReached, prisonClear, totalC2, mayhem, pande, skele, bone, vm, radon, helium, fluffy, bones, mode, previewString ;
 
 function updateGlobals() {
 	notation = game.options.menu.standardNotation.enabled;
@@ -169,12 +169,11 @@ function fluffyLvl(number){
 
 function previewUpdate() {  //called using an onChange event in a <select> statement
 	var thisSelect;
-	var optOrder = 1;
-	var previewString = "";
+	previewString = "";
 	var potentialItems = 10;  //# of select options
 	for (let i = 1; i < potentialItems+1; i++) {
 		thisSelect = document.getElementById("myString"+i).selectedIndex.value;
-		switch (challenge) {
+		switch (thisSelect) {
 			case "h": { //Helium
 				previewString += helium + " ";
 				break;
@@ -219,29 +218,8 @@ function previewUpdate() {  //called using an onChange event in a <select> state
 				break;
 			}
 		}
-
 	}
-	//myString1 - myString10
-	//ModString  <-- final destination
-	//preView    <-- preview destination
-	newStr += (pande) ?  : "";
-	newStr += (mayhem && mayhem < 25) ? "M"+mayhem + " ": ""; 
-	newStr += (game.global.totalRadonEarned) ? radon + " " : helium + " "; 
-	newStr += (totalC2) ?  prettify(totalC2) + "% " : "";
-	newStr += (game.global.fluffyExp2) ? "S" + scruffy + " " : fluffy + " ";
-	newStr += (game.global.autoBattleData.dust) ? "SA" + Math.floor(game.global.autoBattleData.maxEnemyLevel-1) + " " : "";
-	
-        myStr += (mayhem) ? "Mayhem completions: "+mayhem+"<br>" : " ";
-	myStr += (pande) ? "Pandemonium completions: "+pande+"<br>" : " ";
-	myStr += (game.global.fluffyExp2) ? "Scruffy level: "+scruffy+"<br>" : " ";
-	myStr += (fluffy) ? "Fluffy level: "+fluffy+"<br>" : " ";
-	myStr += "Helium: "+helium+" HZE: "+Math.floor(game.global.highestLevelCleared+1)+"<br>";
-	myStr += (game.global.totalRadonEarned) ? "Radon: "+radon+" HZE: "+Math.floor(game.global.highestRadonLevelCleared+1)+"<br>" : " ";
-	myStr += (game.global.totalPortals > 4) ? "Void Maps: "+vm+" ": "";
-	myStr += (game.portal.Observation.trinkets) ? ", Runetrinkets: "+numberWithCommas(game.portal.Observation.trinkets)+"<br>": "<br>";
-	myStr += "Last Skeletimp: "+skele+"<br>"	;	
-	myStr += "Last Presimp: "+bone+"</div>"	;
-    var newStr = "<div class='frow'><b id='ModString'>";
+	document.getElementById("preView").innerHTML = previewString;
 }
 
 var formatString = "";
