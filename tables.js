@@ -245,12 +245,12 @@ function saveString() {
 
 function getString() {
 	preferences = localStorage.getItem("prefString");
-	console.log(preferences);
+	//console.log(preferences);
 	if (preferences === null) {
 		return;
 	}
 	previewString = "";
-	for (let i = 0; i < preferences; i++) {
+	for (let i = 0; i < preferences.length; i++) {
 		thisSelect = preferences[i];
 		switch (thisSelect) {
 			case "h": { //Helium
