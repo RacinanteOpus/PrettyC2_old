@@ -176,7 +176,6 @@ function previewUpdate() {  //called using an onChange event in a <select> state
 	for (let i = 1; i < potentialItems+1; i++) {
 		theElement = document.getElementById("myString"+i);
 		thisSelect = theElement.options[theElement.selectedIndex].value;
-		alert(thisSelect);
 		switch (thisSelect) {
 			case "h": { //Helium
 				previewString += helium + " ";
