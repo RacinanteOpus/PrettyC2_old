@@ -378,6 +378,13 @@ function doClick() {
 	myStr += (game.global.totalPortals > 4) ? "Void Maps: "+vm+"<br>": " ";
 	myStr += "Last Skeletimp: "+skele+"<br>"	;	
 	myStr += "Last Presimp: "+bone+"</div>"	;
+    var newStr = "<div class='frow'>";
+	newStr += (pande) ? "P"+pande+ " " : "";
+	newStr += (mayhem && mayhem < 25) ? "M"+mayhem + " ": ""; 
+	newStr += (game.global.totalRadonEarned) ? radon  + " " : ""; 
+	newStr += (game.global.totalRadonEarned) ? "Radon: "+radon + " " : " ";
+	newStr += (totalC2) ? prettify(totalC2) + " " : "";
+	
 
     var saveNotes = document.getElementById("saveNotes");
     saveNotes.innerHTML = myStr;
