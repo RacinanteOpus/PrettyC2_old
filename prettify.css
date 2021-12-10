@@ -166,6 +166,7 @@ body
   height: 80%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background: #17252A;
+  border: 10px solid #2B7A78;
 }
 
 /* Modal Content */
