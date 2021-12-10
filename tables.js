@@ -244,11 +244,11 @@ function saveString() {
 }
 
 function getString() {
-	var preferences = localStorage.getItem("prefString");
+	preferences = localStorage.getItem("prefString");
+	alert(preferences);
 	if (preferences === null) {
 		return;
 	}
-	alert(preferences);
 	previewString = "";
 	for (let i = 0; i < preferences; i++) {
 		thisSelect = preferences[i];
