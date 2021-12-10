@@ -388,7 +388,7 @@ function doClick() {
 	newStr += "</div>";
 
     var saveNotes = document.getElementById("saveNotes");
-    saveNotes.innerHTML = myStr;
+    saveNotes.innerHTML = myStr+newStr;
 
         myStr = "<div class='frow'>";
 	var nextCost = {};
