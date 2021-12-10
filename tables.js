@@ -220,7 +220,7 @@ function previewUpdate() {  //called using an onChange event in a <select> state
 				break;
 			}
 			case "t": { //Runetrinkets total
-				previewString += prettify(trinkets) + " " ;
+				previewString += "RT:" + trinkets + " " ;
 				tempPrefs.push("t");
 				break;
 			}
@@ -289,7 +289,7 @@ function getString() {
 				break;
 			}
 			case "t": { //Challenge total
-				previewString += prettify(trinkets) + "% " ;
+				previewString += "RT:" + trinkets + " " ;
 				break;
 			}
 			case "a": { //Spire Challenge completions
@@ -314,6 +314,7 @@ function getSave() {
     var foo = document.getElementById("foo");
     foo.value = localStorage.getItem("trimpSave");
 }
+
 function doReset() {
 	//alert("Not yet....");
 	var validC2s = game.c2;
@@ -546,6 +547,7 @@ function doClick() {
 
     var saveNotes = document.getElementById("saveNotes");
     saveNotes.innerHTML = myStr+newStr;
+    getString();
     
         myStr = "<div class='frow'>";
 
