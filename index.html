@@ -108,7 +108,8 @@
 	<table>
 		<tr>
 			<td> Display First </td> 
-			<td><select id="myString1">
+			<td><select id="myString1" onChange="previewUpdate();">
+				<option value="">None</option>
 				<option value="h">Helium</option>
 				<option value="r">Radon</option>
 				<option value="h1">U1 HZE</option>
@@ -124,7 +125,7 @@
 		</tr>
 		<tr>
 			<td> Display Second </td> 
-			<td><select id="myString2">
+			<td><select id="myString2" onChange="previewUpdate();">
 				<option value="">None</option>
 				<option value="h">Helium</option>
 				<option value="r">Radon</option>
@@ -141,7 +142,7 @@
 		</tr>
 		<tr>
 			<td> Display Third </td> 
-			<td><select id="myString3">
+			<td><select id="myString3" onChange="previewUpdate();">
 				<option value="">None</option>
 				<option value="h">Helium</option>
 				<option value="r">Radon</option>
@@ -158,7 +159,7 @@
 		</tr>
 		<tr>
 			<td> Display Fourth </td> 
-			<td><select id="myString4">
+			<td><select id="myString4" onChange="previewUpdate();">
 				<option value="">None</option>
 				<option value="h">Helium</option>
 				<option value="r">Radon</option>
@@ -175,7 +176,7 @@
 		</tr>
 		<tr>
 			<td> Display Fifth </td> 
-			<td><select id="myString5">
+			<td><select id="myString5" onChange="previewUpdate();">
 				<option value="">None</option>
 				<option value="h">Helium</option>
 				<option value="r">Radon</option>
@@ -192,7 +193,7 @@
 		</tr>
 		<tr>
 			<td> Display Sixth </td> 
-			<td><select id="myString6">
+			<td><select id="myString6" onChange="previewUpdate();">
 				<option value="">None</option>
 				<option value="h">Helium</option>
 				<option value="r">Radon</option>
@@ -209,7 +210,7 @@
 		</tr>
 		<tr>
 			<td> Display Seventh </td> 
-			<td><select id="myString7">
+			<td><select id="myString7" onChange="previewUpdate();">
 				<option value="">None</option>
 				<option value="h">Helium</option>
 				<option value="r">Radon</option>
@@ -226,7 +227,7 @@
 		</tr>
 		<tr>
 			<td> Display Eighth </td> 
-			<td><select id="myString8">
+			<td><select id="myString8" onChange="previewUpdate();">
 				<option value="">None</option>
 				<option value="h">Helium</option>
 				<option value="r">Radon</option>
@@ -243,7 +244,7 @@
 		</tr>
 		<tr>
 			<td> Display Nineth </td> 
-			<td><select id="myString9">
+			<td><select id="myString9" onChange="previewUpdate();">
 				<option value="">None</option>
 				<option value="h">Helium</option>
 				<option value="r">Radon</option>
@@ -260,7 +261,7 @@
 		</tr>
 		<tr>
 			<td> Display Tenth </td> 
-			<td><select id="myString10">
+			<td><select id="myString10" onChange="previewUpdate();">
 				<option value="">None</option>
 				<option value="h">Helium</option>
 				<option value="r">Radon</option>
@@ -276,8 +277,11 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan=2>
+			<td>
 				<button id="myStrings" onClick="doMyString();"> Update </button>
+			</td>
+			<td>
+				<span id="preView"></span>
 			</td>
 		</tr>
 	  </table>
