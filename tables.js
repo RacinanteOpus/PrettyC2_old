@@ -2,6 +2,36 @@
 
 var game="";
 var notation=1;
+var nextCost = {};
+
+var hasMesmer, HZReached, radHZReached, prisonClear, totalC2, mayhem, pande, skele, bone, vm, radon, helium, fluffy, bones, mode ;
+
+function updateGlobals() {
+	notation = game.options.menu.standardNotation.enabled;
+	bones = game.global.b;
+	hasMesmer = game.talents.mesmer.purchased;
+	HZReached = game.global.highestLevelCleared+1;
+	radHZReached = game.global.highestRadonLevelCleared+1;
+	prisonClear = game.global.prisonClear;
+	totalC2 = game.global.totalSquaredReward;
+	mayhem = game.global.mayhemCompletions;
+	pande = game.global.pandCompletions;
+	skele = new Date(game.global.lastSkeletimp);
+	bone = new Date(game.global.lastBonePresimpt);
+	vm = game.global.totalVoidMaps;
+	radon = prettify(game.global.totalRadonEarned);
+	helium = prettify(game.global.totalHeliumEarned);
+	scruffy = prettify(scruffyLvl(game.global.fluffyExp2));
+	fluffy = fluffyLvl(game.global.fluffyExp);
+	nextCost["Efficiency"] = 8 * game.generatorUpgrades.Efficiency.upgrades + 8;
+	nextCost["Capacity"] = 32 * game.generatorUpgrades.Capacity.upgrades + 32;
+	nextCost["Supply"] = 64 * game.generatorUpgrades.Supply.upgrades + 64;
+	nextCost["Overclocker"] = 32 * game.generatorUpgrades.Overclocker.upgrades + 512;
+	nextCost[""] = "";
+	
+	if (game.global.generatorMode == 0) {mode = "Gain Magmite"} else {
+        if (game.global.generatorMode == 1) {mode = "Gain Fuel"} else {mode = "Unknown"}};
+}
 
 function numberWithCommas(x,y) {
     return x.toFixed(y).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -135,6 +165,23 @@ function fluffyLvl(number){
 			}
 		}
 	} while (exp > 0);
+}
+
+function previewUpdate() {  //called using an onChange event in a <select> statement
+	var myOptions = getElementById("");
+	var optOrder = 1;
+	var previewString = "";
+	var potentialItems = 10;  //# of select options
+	
+	//ModString  <-- final destination
+	//preView    <-- preview destination
+	newStr += (pande) ? "P"+pande+ " " : "";
+	newStr += (mayhem && mayhem < 25) ? "M"+mayhem + " ": ""; 
+	newStr += (game.global.totalRadonEarned) ? radon + " " : helium + " "; 
+	newStr += (totalC2) ?  prettify(totalC2) + "% " : "";
+	newStr += (game.global.fluffyExp2) ? "S" + scruffy + " " : fluffy + " ";
+	newStr += (game.global.autoBattleData.dust) ? "SA" + Math.floor(game.global.autoBattleData.maxEnemyLevel-1) + " " : "";
+	newStr += "</b><button id='myBtnx' onClick='modal.style.display = \"block\";'> <-- Customize this string. </button></div>";
 }
 
 var formatString = "";
@@ -358,25 +405,7 @@ function doClick() {
 
     game = JSON.parse(LZString.decompressFromBase64(foo.value));
     foo.value = "";
-    notation = game.options.menu.standardNotation.enabled;
-
-    var hasMesmer = game.talents.mesmer.purchased;
-    var HZReached = game.global.highestLevelCleared+1;
-    var radHZReached = game.global.highestRadonLevelCleared+1;
-    var prisonClear = game.global.prisonClear;
-    var totalC2 = game.global.totalSquaredReward;
-
-// Information from save for the notes area
-    
-    var mayhem = game.global.mayhemCompletions;
-    var pande = game.global.pandCompletions;
-    var skele = new Date(game.global.lastSkeletimp);
-    var bone = new Date(game.global.lastBonePresimpt);
-    var vm = game.global.totalVoidMaps;
-    var radon = prettify(game.global.totalRadonEarned);
-    var helium = prettify(game.global.totalHeliumEarned);
-    var scruffy = prettify(scruffyLvl(game.global.fluffyExp2));
-    var fluffy = fluffyLvl(game.global.fluffyExp);
+    updateGlobals();
     var myStr =  "<div class='frow'>";
         myStr += (mayhem) ? "Mayhem completions: "+mayhem+"<br>" : " ";
 	myStr += (pande) ? "Pandemonium completions: "+pande+"<br>" : " ";
@@ -401,17 +430,8 @@ function doClick() {
     saveNotes.innerHTML = myStr+newStr;
 
         myStr = "<div class='frow'>";
-	var nextCost = {};
-	    nextCost["Efficiency"] = 8 * game.generatorUpgrades.Efficiency.upgrades + 8;
-	    nextCost["Capacity"] = 32 * game.generatorUpgrades.Capacity.upgrades + 32;
-	    nextCost["Supply"] = 64 * game.generatorUpgrades.Supply.upgrades + 64;
-	    nextCost["Overclocker"] = 32 * game.generatorUpgrades.Overclocker.upgrades + 512;
-	    nextCost[""] = "";
-	    
-	var mode = "";
-	if (game.global.generatorMode == 0) {mode = "Gain Magmite"} else {
-        if (game.global.generatorMode == 1) {mode = "Gain Fuel"} else {mode = "Unknown"}};
-        if (HZReached > 229) {
+
+	if (HZReached > 229) {
 	    myStr += "Dimensional Generator Mode: " + mode + "<br>";
 	    myStr += "DG Efficiency Upgrades: " + game.generatorUpgrades.Efficiency.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Efficiency"] + "<br>";
 	    myStr += "DG Capacity Upgrades: " + game.generatorUpgrades.Capacity.upgrades + "&nbsp;&nbsp;Next Upgrade cost: " + nextCost["Capacity"] + "<br>";
