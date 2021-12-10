@@ -293,12 +293,12 @@ function getString() {
 			}
 		}
 	}
-	getElementById("ModString").innerHTML = previewString;
+	document.getElementById("ModString").innerHTML = previewString;
 }
 
 function doMyString() {
 	modal.style.display = "none";
-	getElementById("ModString").innerHTML = previewString;
+	document.getElementById("ModString").innerHTML = previewString;
 	saveString();
 }
 
