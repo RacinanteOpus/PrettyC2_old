@@ -4,7 +4,7 @@ var game="";
 var notation=1;
 var nextCost = {};
 
-var hasMesmer, HZReached, radHZReached, prisonClear, totalC2, mayhem, pande, skele, bone, vm, radon, helium, fluffy, bones, mode, previewString ;
+var hasMesmer, HZReached, radHZReached, prisonClear, totalC2, mayhem, pande, skele, bone, vm, radon, helium, fluffy, bones, mode, previewString, preferences, tempPrefs ;
 
 function updateGlobals() {
 	notation = game.options.menu.standardNotation.enabled;
@@ -169,10 +169,84 @@ function fluffyLvl(number){
 
 function previewUpdate() {  //called using an onChange event in a <select> statement
 	var thisSelect;
+	tempPrefs=[];
 	previewString = "";
 	var potentialItems = 10;  //# of select options
 	for (let i = 1; i < potentialItems+1; i++) {
 		thisSelect = document.getElementById("myString"+i).selectedIndex.value;
+		switch (thisSelect) {
+			case "h": { //Helium
+				previewString += helium + " ";
+				tempPrefs.push("h");
+				break;
+			}
+			case "r": { //Radon
+				previewString += radon + " ";
+				tempPrefs.push("r");
+				break;
+			}
+			case "h1": { //U1 HZE
+				previewString += "U1:"+ HZReached + " ";
+				tempPrefs.push("h1");
+				break;
+			}
+			case "r1": { //U2 HZE
+				previewString += "U2:"+ radHZReached + " ";
+				tempPrefs.push("r1");
+				break;
+			}
+			case "f": { //Fluffy level
+				previewString += fluffy + " ";
+				tempPrefs.push("f");
+				break;
+			}
+			case "s": { //Scruffy level
+				previewString += "S" + scruffy + " ";
+				tempPrefs.push("s");
+				break;
+			}
+			case "p": { //Pandemonium completions
+				previewString += "P" + pande + " ";
+				tempPrefs.push("p");
+				break;
+			}
+			case "m": { //Mayhem completions
+				previewString += "M" + mayhem + " ";
+				tempPrefs.push("m");
+				break;
+			}
+			case "c": { //Challenge total
+				previewString += prettify(totalC2) + "% " ;
+				tempPrefs.push("c");
+				break;
+			}
+			case "sa": { //Spire Challenge completions
+				previewString += "SA" + Math.floor(game.global.autoBattleData.maxEnemyLevel-1) + " ";
+				tempPrefs.push("sa");
+				break;
+			}
+			default: {
+				break;
+			}
+		}
+	}
+	document.getElementById("preView").innerHTML = previewString;
+}
+
+var formatString = "";
+
+function saveString() {
+	localStorage.setItem("prefString", tempPrefs);
+}
+
+function getString() {
+	var preferences = localStorage.getItem("prefString");
+	if (preferences === null) {
+		return;
+	}
+	previewString = "";
+	for (let i = 0; i < preferences; i++) {
+		thisSelect = preferences[i];
 		switch (thisSelect) {
 			case "h": { //Helium
 				previewString += helium + " ";
@@ -219,15 +293,7 @@ function previewUpdate() {  //called using an onChange event in a <select> state
 			}
 		}
 	}
-	document.getElementById("preView").innerHTML = previewString;
-}
-
-var formatString = "";
-
-function saveString() {
-}
-
-function getString() {
+	getElementById("ModString").innerHTML = previewString;
 }
 
 function doMyString() {
