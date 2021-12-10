@@ -125,10 +125,9 @@ function fluffyLvl(number){
 			lvl +=1;
 			exp *= 4;
 		} else {
-			alert (number);
 			if (lvl>=10 && plvl>=10) {
-				return "E"+plvl.toString()+"L"+lvl.toString();
-				//return "";
+			//	return "E"+plvl.toString()+"L"+lvl.toString();
+				return "";
 			} else { 
 				return "E"+plvl.toString()+"L"+lvl.toString();
 			}
