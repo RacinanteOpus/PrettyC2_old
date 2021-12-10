@@ -124,7 +124,6 @@ function fluffyLvl(number){
 			number -= exp;
 			lvl +=1;
 			exp *= 4;
-			}
 		} else {
 			if (evo==11) {
 				evo -=1;
