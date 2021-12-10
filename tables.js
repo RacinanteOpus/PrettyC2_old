@@ -231,8 +231,8 @@ function getString() {
 }
 
 function doMyString() {
-	//dismiss modal
-	getElementById("").innerHTML = previewString;
+	modal.style.display = "none";
+	getElementById("ModString").innerHTML = previewString;
 	saveString();
 }
 
