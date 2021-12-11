@@ -5,13 +5,14 @@ var notation=1;
 var nextCost = {};
 
 var hasMesmer, HZReached, radHZReached, prisonClear, totalC2, mayhem, pande, skele, bone, vm, radon, helium, 
-    fluffy, bones, mode, previewString, preferences, tempPrefs, trinkets ;
+    fluffy, bones, mode, previewString, preferences, tempPrefs, trinkets, S3 ;
 
 function updateGlobals() {
 	notation = game.options.menu.standardNotation.enabled;
 	bones = numberWithCommas(game.global.b);
 	hasMesmer = game.talents.mesmer.purchased;
 	HZReached = game.global.highestLevelCleared+1;
+	S3 = game.global.lastRadonPortal;
 	radHZReached = (game.global.fluffyPrestige > 8) ? game.global.highestRadonLevelCleared+1 : 0;
 	prisonClear = game.global.prisonClear;
 	totalC2 = game.global.totalSquaredReward;
@@ -204,6 +205,11 @@ function previewUpdate() {  //called using an onChange event in a <select> state
 				tempPrefs.push("s");
 				break;
 			}
+			case "3": { //Last U2 portal zone
+				previewString += "S3:" + S3 + " ";
+				tempPrefs.push("3");
+				break;
+			}
 			case "p": { //Pandemonium completions
 				previewString += "P" + pande + " ";
 				tempPrefs.push("p");
@@ -275,6 +281,10 @@ function getString() {
 			}
 			case "s": { //Scruffy level
 				previewString += "S" + scruffy + " ";
+				break;
+			}
+			case "3": { //Last U2 portal zone
+				previewString += "S3:" + S3 + " ";
 				break;
 			}
 			case "p": { //Pandemonium completions
