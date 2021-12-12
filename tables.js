@@ -564,7 +564,6 @@ function doClick() {
 
     var saveNotes = document.getElementById("saveNotes");
     saveNotes.innerHTML = myStr+newStr;
-    getString();
     
         myStr = "<div class='frow'>";
 
@@ -847,4 +846,6 @@ function doClick() {
     TcellWIPct.style.textAlign = "right";
     TcellWIPct.setAttribute("id","TotalCs");
     TcellWIPct.title = totalC2;
+	
+    getString();
 };
