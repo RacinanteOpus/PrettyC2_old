@@ -256,8 +256,10 @@ function getString() {
 		return;
 	}
 	previewString = "";
+	var dropDown = 0;
 	for (let i = 0; i < preferences.length; i++) {
 		thisSelect = preferences[i];
+		dropDown = i+1;
 		switch (thisSelect) {
 			case "h": { //Helium
 				previewString += helium + " ";
@@ -310,6 +312,10 @@ function getString() {
 			default: {
 				break;
 			}
+		}
+		theElement = document.getElementById("myString"+dropDown);
+		for (let j = 0; j < theElement.length; j++) {
+			if (theElement.options[j].value==thisSelect) {theElement.options[j].selected = true;};
 		}
 	}
 	document.getElementById("ModString").innerHTML = previewString;
