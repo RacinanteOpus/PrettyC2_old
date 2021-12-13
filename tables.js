@@ -314,6 +314,7 @@ function getString() {
 				break;
 			}
 		}
+		alert(dropDown+" "+JSON.stringify(theElement));
 		theElement = document.getElementById("myString"+dropDown);
 		for (let j = 0; j < theElement.length; j++) {
 			if (theElement.options[j].value==thisSelect) {theElement.options[j].selected = true;};
