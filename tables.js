@@ -260,7 +260,6 @@ function getString() {
 	var dropDown = 0;
 	for (let i = 0; i < preferences.length; i++) {
 		thisSelect = preferences[i];
-		alert(thisSelect);
 		dropDown = i+1;
 		switch (thisSelect) {
 			case "h": { //Helium
@@ -315,12 +314,9 @@ function getString() {
 				break;
 			}
 		}
-		//alert (previewString);
 		theElement = document.getElementById("myString"+dropDown);
-		//alert (theElement.length);
 		for (let j = 1; j < theElement.length; j++) {
 			if (theElement.options[j].value==thisSelect) {
-				alert("Found value "+thisSelect+" at index "+j);
 				theElement.options[j].selected = true;};
 		}
 	}
