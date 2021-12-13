@@ -253,7 +253,7 @@ function getString() {
 	preferences = localStorage.getItem("prefString");
 	//console.log(preferences);
 	if (preferences === null) {
-		return;
+		return "";
 	}
 	previewString = "";
 	var theElement;
@@ -318,9 +318,10 @@ function getString() {
 		for (let j = 0; j < theElement.length; j++) {
 			if (theElement.options[j].value==thisSelect) {theElement.options[j].selected = true;};
 		}
+		theElement = document.getElementById("myString"+dropDown);
 		alert(dropDown+" "+JSON.stringify(theElement));
 	}
-	document.getElementById("ModString").innerHTML = previewString;
+	return previewString;
 }
 
 function doMyString() {
@@ -556,12 +557,17 @@ function doClick() {
 	myStr += "Last Skeletimp: "+skele+"<br>"	;	
 	myStr += "Last Presimp: "+bone+"</div>"	;
     var newStr = "<div class='frow'><b id='ModString'>";
+    var modStr = getString();
+    if (modStr == "") {
 	newStr += (pande) ? "P"+pande+ " " : "";
 	newStr += (mayhem && mayhem < 25) ? "M"+mayhem + " ": ""; 
 	newStr += (game.global.totalRadonEarned) ? radon + " " : helium + " "; 
 	newStr += (totalC2) ?  prettify(totalC2) + "% " : "";
 	newStr += (game.global.fluffyExp2) ? "S" + scruffy + " " : fluffy + " ";
 	newStr += (game.global.autoBattleData.dust) ? "SA" + Math.floor(game.global.autoBattleData.maxEnemyLevel-1) + " " : "";
+    } else {
+	newStr += modStr;
+    }
 	newStr += "</b><button id='myBtnx' onClick='modal.style.display = \"block\";'> <-- Customize this string. </button></div>";
 
     var saveNotes = document.getElementById("saveNotes");
@@ -848,6 +854,4 @@ function doClick() {
     TcellWIPct.style.textAlign = "right";
     TcellWIPct.setAttribute("id","TotalCs");
     TcellWIPct.title = totalC2;
-	
-    getString();
 };
