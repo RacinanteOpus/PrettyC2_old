@@ -319,7 +319,7 @@ function getString() {
 		alert (theElement.length);
 		for (let j = 0; j < theElement.length; j++) {
 			if (theElement.options[j].value==thisSelect) {
-				alert("Found value "+thisSelect+" at index "+j");
+				alert("Found value "+thisSelect+" at index "+j);
 				theElement.options[j].selected = true;};
 		}
 	}
