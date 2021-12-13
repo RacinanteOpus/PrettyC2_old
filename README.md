@@ -1,7 +1,6 @@
-# PrettyC2_old
+# PrettyC2_test
 
-MrTrivel's PrettyC2 Tables with sort capabilities by clicking on the column headers and "what-if" scenarios.
+This is the PrettyC2 test site.  Odd behavior may occur when accessing this site, proceed with caution.  
 
-#Issues: Trapper above 700, initial value display and recalc.
-
-Adding Glass
+# Based on MrTrivel's PrettyC2 Tables 
+with sort capabilities by clicking on the column headers and "what-if" scenarios.
