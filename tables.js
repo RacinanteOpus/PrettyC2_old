@@ -256,6 +256,7 @@ function getString() {
 		return;
 	}
 	previewString = "";
+	var theElement;
 	var dropDown = 0;
 	for (let i = 0; i < preferences.length; i++) {
 		thisSelect = preferences[i];
