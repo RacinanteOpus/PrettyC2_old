@@ -315,7 +315,7 @@ function getString() {
 			}
 		}
 		theElement = document.getElementById("myString"+dropDown);
-		for (let j = 0; j < theElement.options.length; j++) {
+		for (let j = 0; j < theElement.length; j++) {
 			if (theElement.options[j].value==thisSelect) {theElement.options[j].selected = true;};
 		}
 	}
