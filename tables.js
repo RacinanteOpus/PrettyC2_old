@@ -314,12 +314,14 @@ function getString() {
 				break;
 			}
 		}
+		alert (previewString);
 		theElement = document.getElementById("myString"+dropDown);
+		alert (theElement.length);
 		for (let j = 0; j < theElement.length; j++) {
-			if (theElement.options[j].value==thisSelect) {theElement.options[j].selected = true;};
+			if (theElement.options[j].value==thisSelect) {
+				alert("Found value "+thisSelect+" at index "+j");
+				theElement.options[j].selected = true;};
 		}
-		theElement = document.getElementById("myString"+dropDown);
-		alert(dropDown+" "+JSON.stringify(theElement));
 	}
 	return previewString;
 }
